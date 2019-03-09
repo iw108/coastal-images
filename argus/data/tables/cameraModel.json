@@ -1,0 +1,146 @@
+[
+    {
+        "seq": 31,
+        "color": 0,
+        "timestamp": 1302111641,
+        "make": "Sony",
+        "model": "XC75",
+        "id": "XC75",
+        "size": 0.333
+    },
+    {
+        "seq": 32,
+        "color": 1,
+        "timestamp": 1302111641,
+        "make": "Sony",
+        "model": "XC-999",
+        "id": "XC999",
+        "size": 0.333
+    },
+    {
+        "seq": 33,
+        "color": 1,
+        "timestamp": 1302111641,
+        "make": "Sony",
+        "model": "SSC-DC30",
+        "id": "DC30",
+        "size": 0.333
+    },
+    {
+        "seq": 34,
+        "color": 1,
+        "timestamp": 1302111641,
+        "make": "Sony",
+        "model": "SSC-DC50",
+        "id": "DC50",
+        "size": 0.5
+    },
+    {
+        "seq": 35,
+        "color": 0,
+        "timestamp": 1302111641,
+        "make": "Sony",
+        "model": "XC77",
+        "id": "XC77",
+        "size": 0.5
+    },
+    {
+        "seq": 36,
+        "color": 0,
+        "timestamp": 1302111641,
+        "make": "Unknown",
+        "model": "UNK",
+        "id": "UNKXX",
+        "size": 200.0
+    },
+    {
+        "seq": 37,
+        "color": 1,
+        "timestamp": 1302111641,
+        "make": "Sony",
+        "model": "SSC-DC50 Pal",
+        "id": "DC50P",
+        "size": 0.5
+    },
+    {
+        "seq": 8,
+        "color": 0,
+        "timestamp": 1302111641,
+        "make": "",
+        "model": "",
+        "id": "BI001",
+        "size": 0.5
+    },
+    {
+        "seq": 9,
+        "color": 0,
+        "timestamp": 1302111641,
+        "make": "John",
+        "model": "TESTC",
+        "id": "TESTC",
+        "size": 0.5
+    },
+    {
+        "seq": 10,
+        "color": 1,
+        "timestamp": 1302111641,
+        "make": "Sony",
+        "model": "DFW-X700",
+        "id": "DX700",
+        "size": 0.5
+    },
+    {
+        "seq": 11,
+        "color": 1,
+        "timestamp": 1302111641,
+        "make": "Point Grey/CCD-Direct",
+        "model": "MicroPix C-1024",
+        "id": "MPIX",
+        "size": 0.333
+    },
+    {
+        "seq": 12,
+        "color": 0,
+        "timestamp": 1302111641,
+        "make": "Sony",
+        "model": "XCD-SX900",
+        "id": "BX900",
+        "size": 0.5
+    },
+    {
+        "seq": 13,
+        "color": 1,
+        "timestamp": 1302111641,
+        "make": "Sony",
+        "model": "DFW-SX900",
+        "id": "SX900",
+        "size": 0.5
+    },
+    {
+        "seq": 14,
+        "color": 1,
+        "timestamp": 1302111641,
+        "make": "olympus",
+        "model": "C4040",
+        "id": "C4040",
+        "size": 1.0
+    },
+    {
+        "seq": 15,
+        "color": 1,
+        "timestamp": 1302111641,
+        "make": "Point Grey",
+        "model": "Dragonfly",
+        "id": "DRAG",
+        "size": 0.333
+    },
+    {
+        "seq": 16,
+        "color": 1,
+        "timestamp": 1302111641,
+        "make": "Point Grey",
+        "model": "Flea",
+        "id": "FLEA",
+        "size": 0.333
+    }
+]

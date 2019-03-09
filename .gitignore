@@ -110,5 +110,8 @@ venv.bak/
 ### Python Patch ###
 .venv/
 
+# For macs ...
+.DS_Store
+
 
 # End of https://www.gitignore.io/api/python

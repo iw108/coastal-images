@@ -1,0 +1,2902 @@
+[
+    {
+        "seq": 24,
+        "baseGeometrySeq": 1023702028,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 298.016251651,
+        "V": 185.8263340236,
+        "eccentricity": 0.0,
+        "gcpID": "SCXX0007"
+    },
+    {
+        "seq": 25,
+        "baseGeometrySeq": 1023702028,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 364.0194278289,
+        "V": 185.7910269068,
+        "eccentricity": 0.0,
+        "gcpID": "SCXX0006"
+    },
+    {
+        "seq": 26,
+        "baseGeometrySeq": 1023702028,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 459.4067477883,
+        "V": 185.7407724044,
+        "eccentricity": 0.0,
+        "gcpID": "SCXX0005"
+    },
+    {
+        "seq": 27,
+        "baseGeometrySeq": 1023702028,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 609.221033298,
+        "V": 185.7124632719,
+        "eccentricity": 0.0,
+        "gcpID": "SCXX0004"
+    },
+    {
+        "seq": 28,
+        "baseGeometrySeq": 1023702028,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 37.9396245233,
+        "V": 211.5914628538,
+        "eccentricity": 0.0,
+        "gcpID": "SCXX0021"
+    },
+    {
+        "seq": 29,
+        "baseGeometrySeq": 1023702028,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 74.5720383137,
+        "V": 223.715187101,
+        "eccentricity": 0.0,
+        "gcpID": "SCXX0022"
+    },
+    {
+        "seq": 38,
+        "baseGeometrySeq": 1030024353,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 106.8755984843,
+        "V": 187.8757034471,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX8002"
+    },
+    {
+        "seq": 39,
+        "baseGeometrySeq": 1030024353,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 44.4381086776,
+        "V": 115.3132062606,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX8003"
+    },
+    {
+        "seq": 75,
+        "baseGeometrySeq": 1051725012,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": -431.1800892299,
+        "V": 211.6140287738,
+        "eccentricity": 0.0,
+        "gcpID": "SCXX0008"
+    },
+    {
+        "seq": 76,
+        "baseGeometrySeq": 1051725012,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 53.0560454656,
+        "V": 153.1399722896,
+        "eccentricity": 0.0,
+        "gcpID": "SCXX0004"
+    },
+    {
+        "seq": 77,
+        "baseGeometrySeq": 1051725012,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 129.7479406542,
+        "V": 146.4778428375,
+        "eccentricity": 0.0,
+        "gcpID": "SCXX0003"
+    },
+    {
+        "seq": 78,
+        "baseGeometrySeq": 1051725012,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 228.4434783629,
+        "V": 130.4754715643,
+        "eccentricity": 0.0,
+        "gcpID": "SCXX0002"
+    },
+    {
+        "seq": 79,
+        "baseGeometrySeq": 1051725012,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 421.5209012851,
+        "V": 123.755873527,
+        "eccentricity": 0.0,
+        "gcpID": "SCXX0001"
+    },
+    {
+        "seq": 80,
+        "baseGeometrySeq": 1060200052,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 541.6890708018,
+        "V": 337.571024657,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0021"
+    },
+    {
+        "seq": 81,
+        "baseGeometrySeq": 1060200052,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 553.8361241717,
+        "V": 434.7033451368,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0022"
+    },
+    {
+        "seq": 82,
+        "baseGeometrySeq": 1063213085,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 295.3539118199,
+        "V": 107.8761018861,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0016"
+    },
+    {
+        "seq": 83,
+        "baseGeometrySeq": 1063213085,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 389.7669163009,
+        "V": 131.981852904,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0015"
+    },
+    {
+        "seq": 84,
+        "baseGeometrySeq": 1063213085,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 495.9132688405,
+        "V": 155.1450765984,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0017"
+    },
+    {
+        "seq": 87,
+        "baseGeometrySeq": 1065115753,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 531.2181139863,
+        "V": 443.2182516512,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0100"
+    },
+    {
+        "seq": 88,
+        "baseGeometrySeq": 1065115753,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 564.0316397964,
+        "V": 288.0939954745,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0104"
+    },
+    {
+        "seq": 92,
+        "baseGeometrySeq": 1065303877,
+        "timestamp": 1302111886,
+        "PPP": 2,
+        "U": 846.0025686407,
+        "V": 545.4429296129,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0102"
+    },
+    {
+        "seq": 93,
+        "baseGeometrySeq": 1065303877,
+        "timestamp": 1302111886,
+        "PPP": 2,
+        "U": 916.3442664237,
+        "V": 455.1356533942,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0104"
+    },
+    {
+        "seq": 94,
+        "baseGeometrySeq": 1065303877,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 657.9036775331,
+        "V": 174.5724764179,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0106"
+    },
+    {
+        "seq": 97,
+        "baseGeometrySeq": 1065306760,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 943.7814143943,
+        "V": 723.3388607381,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0113"
+    },
+    {
+        "seq": 98,
+        "baseGeometrySeq": 1065306760,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 1008.2756579557,
+        "V": 720.8682300725,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0114"
+    },
+    {
+        "seq": 99,
+        "baseGeometrySeq": 1065306760,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 887.6663403325,
+        "V": 165.0145866193,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0115"
+    },
+    {
+        "seq": 100,
+        "baseGeometrySeq": 1066329404,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 550.7872589759,
+        "V": 155.5221716767,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0106"
+    },
+    {
+        "seq": 101,
+        "baseGeometrySeq": 1066329404,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 386.0215022962,
+        "V": 131.3677786932,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0107"
+    },
+    {
+        "seq": 102,
+        "baseGeometrySeq": 1066329404,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 290.3807124066,
+        "V": 64.1767661092,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0112"
+    },
+    {
+        "seq": 103,
+        "baseGeometrySeq": 1066331240,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 630.3629013734,
+        "V": 431.3674400029,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0114"
+    },
+    {
+        "seq": 104,
+        "baseGeometrySeq": 1066331240,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 558.3716849413,
+        "V": 455.1221482567,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0115"
+    },
+    {
+        "seq": 107,
+        "baseGeometrySeq": 1068843696,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 510.9997984245,
+        "V": 127.0011919593,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0016"
+    },
+    {
+        "seq": 108,
+        "baseGeometrySeq": 1068843696,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 677.999791337,
+        "V": 168.0012198062,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0015"
+    },
+    {
+        "seq": 109,
+        "baseGeometrySeq": 1068844685,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 894.999188961,
+        "V": 628.99968894,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0117"
+    },
+    {
+        "seq": 110,
+        "baseGeometrySeq": 1068844685,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 1001.9983060013,
+        "V": 344.9999170233,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0119"
+    },
+    {
+        "seq": 134,
+        "baseGeometrySeq": 1091482783,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 313.4854063352,
+        "V": 234.7317200963,
+        "eccentricity": 0.0,
+        "gcpID": "LUXX0014"
+    },
+    {
+        "seq": 135,
+        "baseGeometrySeq": 1091482783,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 177.2670506739,
+        "V": 95.4694773887,
+        "eccentricity": 0.0,
+        "gcpID": "LUXX0018"
+    },
+    {
+        "seq": 136,
+        "baseGeometrySeq": 1091482783,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 169.1736757994,
+        "V": 95.8579987048,
+        "eccentricity": 0.0,
+        "gcpID": "LUXX0019"
+    },
+    {
+        "seq": 137,
+        "baseGeometrySeq": 1091482783,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 344.243560566,
+        "V": 118.0781774793,
+        "eccentricity": 0.0,
+        "gcpID": "LUXX0022"
+    },
+    {
+        "seq": 138,
+        "baseGeometrySeq": 1091482783,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 341.3358888889,
+        "V": 380.2389037007,
+        "eccentricity": 0.0,
+        "gcpID": "LUXX0024"
+    },
+    {
+        "seq": 139,
+        "baseGeometrySeq": 1091493131,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 5.7187962507,
+        "V": 159.4687642215,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0014"
+    },
+    {
+        "seq": 140,
+        "baseGeometrySeq": 1091493131,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 576.5625107809,
+        "V": 99.6875109974,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0030"
+    },
+    {
+        "seq": 179,
+        "baseGeometrySeq": 1096403777,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 396.644416554,
+        "V": 363.5364108417,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0050"
+    },
+    {
+        "seq": 180,
+        "baseGeometrySeq": 1096403777,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 537.6134777399,
+        "V": 173.8486242888,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0051"
+    },
+    {
+        "seq": 181,
+        "baseGeometrySeq": 1096403777,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 311.9034386449,
+        "V": 445.7750320746,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0052"
+    },
+    {
+        "seq": 182,
+        "baseGeometrySeq": 1096403777,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 443.6025077448,
+        "V": 227.8262239494,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0053"
+    },
+    {
+        "seq": 187,
+        "baseGeometrySeq": 1096483382,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 125.5623959034,
+        "V": 363.4375679421,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0023"
+    },
+    {
+        "seq": 188,
+        "baseGeometrySeq": 1096483382,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 336.9375305493,
+        "V": 237.5624871576,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0025"
+    },
+    {
+        "seq": 189,
+        "baseGeometrySeq": 1096566335,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 464.5627053871,
+        "V": 241.9378257764,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0066"
+    },
+    {
+        "seq": 190,
+        "baseGeometrySeq": 1096566335,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 461.4380746121,
+        "V": 384.5632325341,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0067"
+    },
+    {
+        "seq": 194,
+        "baseGeometrySeq": 1098994618,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 278.6919133173,
+        "V": 407.1742233795,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0001"
+    },
+    {
+        "seq": 195,
+        "baseGeometrySeq": 1098994618,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 198.877442276,
+        "V": 314.5253888582,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0002"
+    },
+    {
+        "seq": 196,
+        "baseGeometrySeq": 1098994618,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 153.5850788897,
+        "V": 231.7050065919,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0003"
+    },
+    {
+        "seq": 215,
+        "baseGeometrySeq": 1106776893,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 344.2080848214,
+        "V": 124.0150600094,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0016"
+    },
+    {
+        "seq": 216,
+        "baseGeometrySeq": 1106776893,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 846.947628542,
+        "V": 263.2748096994,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0014"
+    },
+    {
+        "seq": 217,
+        "baseGeometrySeq": 1106776893,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 915.7204853042,
+        "V": 316.8954465025,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0013"
+    },
+    {
+        "seq": 218,
+        "baseGeometrySeq": 1106776893,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 1007.9726296261,
+        "V": 497.6810652134,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0124"
+    },
+    {
+        "seq": 219,
+        "baseGeometrySeq": 1106777542,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 786.9995796411,
+        "V": 688.9996617921,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0121"
+    },
+    {
+        "seq": 220,
+        "baseGeometrySeq": 1106777542,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 859.1245504017,
+        "V": 83.1246571811,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0120"
+    },
+    {
+        "seq": 221,
+        "baseGeometrySeq": 1106778555,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 958.0000321656,
+        "V": 713.0000222231,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0125"
+    },
+    {
+        "seq": 222,
+        "baseGeometrySeq": 1106778555,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 990.0001040418,
+        "V": 348.9999851423,
+        "eccentricity": 0.0,
+        "gcpID": "BLXX0127"
+    },
+    {
+        "seq": 223,
+        "baseGeometrySeq": 1107897737,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 522.7507289989,
+        "V": 145.9738938157,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0035"
+    },
+    {
+        "seq": 224,
+        "baseGeometrySeq": 1107897737,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 623.0362437859,
+        "V": 206.1205139602,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0036"
+    },
+    {
+        "seq": 225,
+        "baseGeometrySeq": 1107897737,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 410.5699103001,
+        "V": 79.1594761133,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0037"
+    },
+    {
+        "seq": 226,
+        "baseGeometrySeq": 1107897737,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 400.7709132712,
+        "V": 77.9764036254,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0038"
+    },
+    {
+        "seq": 227,
+        "baseGeometrySeq": 1107897737,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 586.2671470692,
+        "V": 178.3003757399,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0049"
+    },
+    {
+        "seq": 228,
+        "baseGeometrySeq": 1107897737,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 605.8178147379,
+        "V": 188.0735561547,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0048"
+    },
+    {
+        "seq": 229,
+        "baseGeometrySeq": 1107897737,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 626.786510172,
+        "V": 200.3269105549,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0047"
+    },
+    {
+        "seq": 230,
+        "baseGeometrySeq": 1108682309,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 442.6755564769,
+        "V": 55.0177814316,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0037"
+    },
+    {
+        "seq": 231,
+        "baseGeometrySeq": 1108682309,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 432.678318319,
+        "V": 55.0544739968,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0038"
+    },
+    {
+        "seq": 232,
+        "baseGeometrySeq": 1108682309,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 624.6510522134,
+        "V": 122.3912347581,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0049"
+    },
+    {
+        "seq": 233,
+        "baseGeometrySeq": 1108682309,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 228.0106018129,
+        "V": 334.5779372159,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0078"
+    },
+    {
+        "seq": 234,
+        "baseGeometrySeq": 1108682309,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 601.3920554742,
+        "V": 339.2968793905,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0079"
+    },
+    {
+        "seq": 244,
+        "baseGeometrySeq": 1109191451,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 345.6326821282,
+        "V": 60.7453009697,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0038"
+    },
+    {
+        "seq": 245,
+        "baseGeometrySeq": 1109191451,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 194.6506731154,
+        "V": 396.839861541,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0078"
+    },
+    {
+        "seq": 246,
+        "baseGeometrySeq": 1109191451,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 456.2102459749,
+        "V": 381.0416626082,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0079"
+    },
+    {
+        "seq": 251,
+        "baseGeometrySeq": 1111008532,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 549.510126466,
+        "V": 415.7097555672,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0039"
+    },
+    {
+        "seq": 252,
+        "baseGeometrySeq": 1111008532,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 197.4956802766,
+        "V": 297.0840185595,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0044"
+    },
+    {
+        "seq": 253,
+        "baseGeometrySeq": 1111008532,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 248.6537792231,
+        "V": 314.877314932,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0043"
+    },
+    {
+        "seq": 254,
+        "baseGeometrySeq": 1111008532,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 307.2157186051,
+        "V": 334.7920639494,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0042"
+    },
+    {
+        "seq": 255,
+        "baseGeometrySeq": 1111008532,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 375.2000771945,
+        "V": 357.8513663625,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0041"
+    },
+    {
+        "seq": 256,
+        "baseGeometrySeq": 1111008532,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 455.1775029736,
+        "V": 384.5969100208,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0040"
+    },
+    {
+        "seq": 266,
+        "baseGeometrySeq": 1112931328,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 254.1407830373,
+        "V": 634.8462476113,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0001"
+    },
+    {
+        "seq": 267,
+        "baseGeometrySeq": 1112931328,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 115.5354241406,
+        "V": 484.307698275,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0002"
+    },
+    {
+        "seq": 268,
+        "baseGeometrySeq": 1112931328,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 35.0332321569,
+        "V": 347.7675029434,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0003"
+    },
+    {
+        "seq": 269,
+        "baseGeometrySeq": 1112931328,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 303.7555946211,
+        "V": 670.4433296076,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0016"
+    },
+    {
+        "seq": 275,
+        "baseGeometrySeq": 1113513411,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 626.6063269228,
+        "V": 550.8099077366,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0050"
+    },
+    {
+        "seq": 276,
+        "baseGeometrySeq": 1113513411,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 493.2214737372,
+        "V": 676.2227893487,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0052"
+    },
+    {
+        "seq": 277,
+        "baseGeometrySeq": 1113513411,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 703.0912368088,
+        "V": 340.792882365,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0053"
+    },
+    {
+        "seq": 278,
+        "baseGeometrySeq": 1113513411,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 487.390947763,
+        "V": 634.1101868798,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0054"
+    },
+    {
+        "seq": 282,
+        "baseGeometrySeq": 1113513706,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 201.6834986151,
+        "V": 504.5640568277,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0084"
+    },
+    {
+        "seq": 283,
+        "baseGeometrySeq": 1113513706,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 59.6057051433,
+        "V": 235.472654466,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0086"
+    },
+    {
+        "seq": 287,
+        "baseGeometrySeq": 1113514884,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 633.0013745378,
+        "V": 558.5507114098,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0006"
+    },
+    {
+        "seq": 288,
+        "baseGeometrySeq": 1113514884,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 631.4381628933,
+        "V": 709.3000713366,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0011"
+    },
+    {
+        "seq": 289,
+        "baseGeometrySeq": 1113514884,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 172.2613136657,
+        "V": 356.5453642832,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0073"
+    },
+    {
+        "seq": 290,
+        "baseGeometrySeq": 1113514884,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 299.389670339,
+        "V": 234.6189355225,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0074"
+    },
+    {
+        "seq": 295,
+        "baseGeometrySeq": 1113520131,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 99.5656460977,
+        "V": 407.0383040807,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0044"
+    },
+    {
+        "seq": 296,
+        "baseGeometrySeq": 1113520131,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 501.8717696782,
+        "V": 520.3397014116,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0040"
+    },
+    {
+        "seq": 297,
+        "baseGeometrySeq": 1113520131,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 994.6672634967,
+        "V": 473.9477116399,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0052"
+    },
+    {
+        "seq": 298,
+        "baseGeometrySeq": 1113520131,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 993.8701568431,
+        "V": 444.7097726733,
+        "eccentricity": 0.0,
+        "gcpID": "DUXX0054"
+    },
+    {
+        "seq": 323,
+        "baseGeometrySeq": 1119654616,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 120.4789709502,
+        "V": 17.2799788655,
+        "eccentricity": 0.0,
+        "gcpID": "PAXX0013"
+    },
+    {
+        "seq": 324,
+        "baseGeometrySeq": 1119654616,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 538.7819201328,
+        "V": 54.0730575711,
+        "eccentricity": 0.0,
+        "gcpID": "PAXX0014"
+    },
+    {
+        "seq": 325,
+        "baseGeometrySeq": 1119654616,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 596.0497687511,
+        "V": 30.2559404438,
+        "eccentricity": 0.0,
+        "gcpID": "PAXX0015"
+    },
+    {
+        "seq": 326,
+        "baseGeometrySeq": 1119654616,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 433.8515794273,
+        "V": 44.7381835072,
+        "eccentricity": 0.0,
+        "gcpID": "PAXX0041"
+    },
+    {
+        "seq": 327,
+        "baseGeometrySeq": 1119654616,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 417.1505735421,
+        "V": 42.9926133453,
+        "eccentricity": 0.0,
+        "gcpID": "PAXX0044"
+    },
+    {
+        "seq": 328,
+        "baseGeometrySeq": 1119654616,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 626.7696916435,
+        "V": 168.0221623619,
+        "eccentricity": 0.0,
+        "gcpID": "PAXX0406"
+    },
+    {
+        "seq": 329,
+        "baseGeometrySeq": 1119654616,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 475.4677748279,
+        "V": 53.7575034475,
+        "eccentricity": 0.0,
+        "gcpID": "PAXX0412"
+    },
+    {
+        "seq": 334,
+        "baseGeometrySeq": 1119988706,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 499.3449031561,
+        "V": 309.103142858,
+        "eccentricity": 0.0,
+        "gcpID": "MUXX0012"
+    },
+    {
+        "seq": 335,
+        "baseGeometrySeq": 1119988706,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 460.5179108296,
+        "V": 337.9747498064,
+        "eccentricity": 0.0,
+        "gcpID": "MUXX0013"
+    },
+    {
+        "seq": 336,
+        "baseGeometrySeq": 1119988706,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 73.7544435608,
+        "V": 345.2980786725,
+        "eccentricity": 0.0,
+        "gcpID": "MUXX0014"
+    },
+    {
+        "seq": 346,
+        "baseGeometrySeq": 1119996880,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 48.1663846812,
+        "V": 368.4837993754,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0003"
+    },
+    {
+        "seq": 347,
+        "baseGeometrySeq": 1119996880,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 211.0637257024,
+        "V": 419.2850944985,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0004"
+    },
+    {
+        "seq": 348,
+        "baseGeometrySeq": 1119996880,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 400.976869761,
+        "V": 486.586015363,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0005"
+    },
+    {
+        "seq": 349,
+        "baseGeometrySeq": 1119996880,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 611.7152284971,
+        "V": 558.138959818,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0006"
+    },
+    {
+        "seq": 350,
+        "baseGeometrySeq": 1119996880,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 828.649723614,
+        "V": 630.9202380287,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0007"
+    },
+    {
+        "seq": 351,
+        "baseGeometrySeq": 1119996880,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 579.495843789,
+        "V": 214.1536291659,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0035"
+    },
+    {
+        "seq": 352,
+        "baseGeometrySeq": 1119996880,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 560.7930890675,
+        "V": 209.1297709445,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0036"
+    },
+    {
+        "seq": 353,
+        "baseGeometrySeq": 1119996880,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 270.1396646962,
+        "V": 151.1762501545,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0037"
+    },
+    {
+        "seq": 354,
+        "baseGeometrySeq": 1119996880,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 254.801631293,
+        "V": 146.7583874727,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0038"
+    },
+    {
+        "seq": 355,
+        "baseGeometrySeq": 1120239583,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 93.0373710009,
+        "V": 729.9859784952,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0007"
+    },
+    {
+        "seq": 356,
+        "baseGeometrySeq": 1120239583,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 297.1391144814,
+        "V": 620.0252120267,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0008"
+    },
+    {
+        "seq": 357,
+        "baseGeometrySeq": 1120239583,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 480.4009402883,
+        "V": 518.8854851346,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0009"
+    },
+    {
+        "seq": 358,
+        "baseGeometrySeq": 1120239583,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 642.4516029526,
+        "V": 429.0871914674,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0010"
+    },
+    {
+        "seq": 359,
+        "baseGeometrySeq": 1120239583,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 782.9278402881,
+        "V": 350.6539078263,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0011"
+    },
+    {
+        "seq": 360,
+        "baseGeometrySeq": 1120239583,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 1007.6904910729,
+        "V": 222.9713675881,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0012"
+    },
+    {
+        "seq": 361,
+        "baseGeometrySeq": 1120239583,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 777.1952242535,
+        "V": 70.6515639485,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0029"
+    },
+    {
+        "seq": 362,
+        "baseGeometrySeq": 1120239583,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 765.8018863613,
+        "V": 75.4398201136,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0030"
+    },
+    {
+        "seq": 363,
+        "baseGeometrySeq": 1120239583,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 553.1647768311,
+        "V": 163.7997140341,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0031"
+    },
+    {
+        "seq": 364,
+        "baseGeometrySeq": 1120239583,
+        "timestamp": 1302111886,
+        "PPP": 1,
+        "U": 540.5120761104,
+        "V": 169.2006249298,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0032"
+    },
+    {
+        "seq": 374,
+        "baseGeometrySeq": 1120756989,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 567.3936649687,
+        "V": 72.4047627062,
+        "eccentricity": 0.0,
+        "gcpID": "YAXX0006"
+    },
+    {
+        "seq": 375,
+        "baseGeometrySeq": 1120756989,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 154.8171140466,
+        "V": 80.160471552,
+        "eccentricity": 0.0,
+        "gcpID": "YAXX0007"
+    },
+    {
+        "seq": 376,
+        "baseGeometrySeq": 1120756989,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 136.6012361626,
+        "V": 93.6546957401,
+        "eccentricity": 0.0,
+        "gcpID": "YAXX0014"
+    },
+    {
+        "seq": 377,
+        "baseGeometrySeq": 1120756989,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 178.0128486878,
+        "V": 92.7673276187,
+        "eccentricity": 0.0,
+        "gcpID": "YAXX0015"
+    },
+    {
+        "seq": 381,
+        "baseGeometrySeq": 1123178926,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 574.306475891,
+        "V": 98.2735600571,
+        "eccentricity": 0.0,
+        "gcpID": "CAXX0001"
+    },
+    {
+        "seq": 382,
+        "baseGeometrySeq": 1123178926,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 561.2960888027,
+        "V": 81.8233920407,
+        "eccentricity": 0.0,
+        "gcpID": "CAXX0002"
+    },
+    {
+        "seq": 383,
+        "baseGeometrySeq": 1123178926,
+        "timestamp": 1302111886,
+        "PPP": 0,
+        "U": 526.0359169917,
+        "V": 97.6901932948,
+        "eccentricity": 0.0,
+        "gcpID": "CAXX0003"
+    },
+    {
+        "seq": 384,
+        "baseGeometrySeq": 1123178926,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 113.0425605147,
+        "V": 145.1505243396,
+        "eccentricity": 0.0,
+        "gcpID": "CAXX0006"
+    },
+    {
+        "seq": 385,
+        "baseGeometrySeq": 1123178926,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 277.7312944407,
+        "V": 428.9099416074,
+        "eccentricity": 0.0,
+        "gcpID": "CAXX0009"
+    },
+    {
+        "seq": 386,
+        "baseGeometrySeq": 1123178926,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 267.6806229728,
+        "V": 99.535431274,
+        "eccentricity": 0.0,
+        "gcpID": "CAXX0004"
+    },
+    {
+        "seq": 391,
+        "baseGeometrySeq": 1123278738,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 347.5809546364,
+        "V": 464.7244829435,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0017"
+    },
+    {
+        "seq": 392,
+        "baseGeometrySeq": 1123278738,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 195.1936731105,
+        "V": 287.8253149162,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0009"
+    },
+    {
+        "seq": 393,
+        "baseGeometrySeq": 1123278738,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 451.6937430954,
+        "V": 162.1527837552,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0002"
+    },
+    {
+        "seq": 394,
+        "baseGeometrySeq": 1123278738,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 597.2445656093,
+        "V": 152.8139894071,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0001"
+    },
+    {
+        "seq": 399,
+        "baseGeometrySeq": 1123882478,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 449.9545163847,
+        "V": 74.098899696,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0004"
+    },
+    {
+        "seq": 400,
+        "baseGeometrySeq": 1123882478,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 356.6097469787,
+        "V": 68.9444779675,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0003"
+    },
+    {
+        "seq": 401,
+        "baseGeometrySeq": 1123882478,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 18.5317695596,
+        "V": 90.4744138893,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0001"
+    },
+    {
+        "seq": 402,
+        "baseGeometrySeq": 1124487387,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 340.2508457762,
+        "V": 451.6381483575,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0017"
+    },
+    {
+        "seq": 403,
+        "baseGeometrySeq": 1124487387,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 167.4716020173,
+        "V": 269.1960246249,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0009"
+    },
+    {
+        "seq": 404,
+        "baseGeometrySeq": 1124487387,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 423.0937124436,
+        "V": 131.404262992,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0002"
+    },
+    {
+        "seq": 405,
+        "baseGeometrySeq": 1124487387,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 570.0173056146,
+        "V": 118.0486283505,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0001"
+    },
+    {
+        "seq": 406,
+        "baseGeometrySeq": 1125505541,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 189.6360536325,
+        "V": 445.9736906176,
+        "eccentricity": 0.0,
+        "gcpID": "DRXX0004"
+    },
+    {
+        "seq": 407,
+        "baseGeometrySeq": 1125505541,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 117.0265243698,
+        "V": 452.004621241,
+        "eccentricity": 0.0,
+        "gcpID": "DRXX0002"
+    },
+    {
+        "seq": 408,
+        "baseGeometrySeq": 1125599427,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 562.5769619802,
+        "V": 70.9254958744,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0004"
+    },
+    {
+        "seq": 409,
+        "baseGeometrySeq": 1125599427,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 469.8783086347,
+        "V": 66.1941537085,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0003"
+    },
+    {
+        "seq": 410,
+        "baseGeometrySeq": 1125599427,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 142.4289324178,
+        "V": 87.8794642437,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0001"
+    },
+    {
+        "seq": 414,
+        "baseGeometrySeq": 1127841304,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 326.7045548955,
+        "V": 685.9538460056,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0016"
+    },
+    {
+        "seq": 415,
+        "baseGeometrySeq": 1127841304,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 745.9014695205,
+        "V": 484.5411230561,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0017"
+    },
+    {
+        "seq": 416,
+        "baseGeometrySeq": 1127841304,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 41.2000119812,
+        "V": 335.3816008005,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0019"
+    },
+    {
+        "seq": 417,
+        "baseGeometrySeq": 1127841304,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 817.9413910733,
+        "V": 51.932108557,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0039"
+    },
+    {
+        "seq": 418,
+        "baseGeometrySeq": 1127841304,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 800.7514998331,
+        "V": 57.4729328493,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0040"
+    },
+    {
+        "seq": 419,
+        "baseGeometrySeq": 1127841304,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 468.8958948464,
+        "V": 175.7388104705,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0041"
+    },
+    {
+        "seq": 420,
+        "baseGeometrySeq": 1127841304,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 447.9611385106,
+        "V": 182.8272875261,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0042"
+    },
+    {
+        "seq": 421,
+        "baseGeometrySeq": 1127941031,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 451.6220325411,
+        "V": 736.9040995728,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0012"
+    },
+    {
+        "seq": 422,
+        "baseGeometrySeq": 1127941031,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 619.5655137972,
+        "V": 550.476258514,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0013"
+    },
+    {
+        "seq": 423,
+        "baseGeometrySeq": 1127941031,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 741.2954980443,
+        "V": 413.9511323169,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0014"
+    },
+    {
+        "seq": 424,
+        "baseGeometrySeq": 1127941031,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 833.8998404019,
+        "V": 329.3547269764,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0015"
+    },
+    {
+        "seq": 425,
+        "baseGeometrySeq": 1127941031,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 901.5400085005,
+        "V": 251.727907445,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0016"
+    },
+    {
+        "seq": 426,
+        "baseGeometrySeq": 1127941031,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 641.696363775,
+        "V": 199.5619860572,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0021"
+    },
+    {
+        "seq": 427,
+        "baseGeometrySeq": 1127941031,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 434.5128163806,
+        "V": 358.0191947764,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0025"
+    },
+    {
+        "seq": 428,
+        "baseGeometrySeq": 1127941031,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 426.8067603378,
+        "V": 363.8419405109,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0026"
+    },
+    {
+        "seq": 429,
+        "baseGeometrySeq": 1127941031,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 277.6332564748,
+        "V": 472.9715813015,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0027"
+    },
+    {
+        "seq": 430,
+        "baseGeometrySeq": 1127941031,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 267.8763934618,
+        "V": 480.2404649667,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0028"
+    },
+    {
+        "seq": 431,
+        "baseGeometrySeq": 1127941031,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 71.7705338138,
+        "V": 626.1139816733,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0029"
+    },
+    {
+        "seq": 432,
+        "baseGeometrySeq": 1127941031,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 58.1430331061,
+        "V": 636.5537438205,
+        "eccentricity": 0.0,
+        "gcpID": "TSXX0030"
+    },
+    {
+        "seq": 433,
+        "baseGeometrySeq": 1129674733,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 524.3572422856,
+        "V": 76.862454305,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0016"
+    },
+    {
+        "seq": 434,
+        "baseGeometrySeq": 1129674733,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 331.8995058628,
+        "V": 67.4695828134,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0008"
+    },
+    {
+        "seq": 435,
+        "baseGeometrySeq": 1129674733,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 98.1768279752,
+        "V": 100.2688596837,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0007"
+    },
+    {
+        "seq": 436,
+        "baseGeometrySeq": 1133301478,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 498.9970496043,
+        "V": 92.9776812409,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0010"
+    },
+    {
+        "seq": 437,
+        "baseGeometrySeq": 1133301478,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 429.3796476286,
+        "V": 85.6097924772,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0008"
+    },
+    {
+        "seq": 438,
+        "baseGeometrySeq": 1133301478,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 172.728558709,
+        "V": 96.0448232368,
+        "eccentricity": 0.0,
+        "gcpID": "TIXX0006"
+    },
+    {
+        "seq": 16308,
+        "baseGeometrySeq": 1155058782,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 273.8092105263,
+        "V": 354.7828947368,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0050"
+    },
+    {
+        "seq": 16309,
+        "baseGeometrySeq": 1155058782,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 289.1052631579,
+        "V": 556.7565789474,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0059"
+    },
+    {
+        "seq": 439,
+        "baseGeometrySeq": 1133301482,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 409.832677159,
+        "V": 201.8782725958,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0059"
+    },
+    {
+        "seq": 440,
+        "baseGeometrySeq": 1133301482,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 56.931723078,
+        "V": 163.9579136197,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0071"
+    },
+    {
+        "seq": 441,
+        "baseGeometrySeq": 1133301482,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 69.4857172644,
+        "V": 166.1016085806,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0072"
+    },
+    {
+        "seq": 442,
+        "baseGeometrySeq": 1133301483,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 13.5915614837,
+        "V": 105.4507549992,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0030"
+    },
+    {
+        "seq": 443,
+        "baseGeometrySeq": 1133301483,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 450.5881513431,
+        "V": 175.6330907175,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0068"
+    },
+    {
+        "seq": 444,
+        "baseGeometrySeq": 1133301483,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 511.2781468839,
+        "V": 177.9025913448,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0072"
+    },
+    {
+        "seq": 445,
+        "baseGeometrySeq": 1133301484,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 144.0479149371,
+        "V": 109.0635180718,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0004"
+    },
+    {
+        "seq": 446,
+        "baseGeometrySeq": 1133301484,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 6.0810160847,
+        "V": 157.2877685222,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0014"
+    },
+    {
+        "seq": 447,
+        "baseGeometrySeq": 1133301484,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 208.1709499633,
+        "V": 89.8838525896,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0032"
+    },
+    {
+        "seq": 448,
+        "baseGeometrySeq": 1133301485,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 393.5021683601,
+        "V": 84.853322254,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0002"
+    },
+    {
+        "seq": 449,
+        "baseGeometrySeq": 1133301485,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 530.5655168499,
+        "V": 214.2027755685,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0005"
+    },
+    {
+        "seq": 450,
+        "baseGeometrySeq": 1133301485,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 462.8262896375,
+        "V": 275.1119291297,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0008"
+    },
+    {
+        "seq": 451,
+        "baseGeometrySeq": 1133301485,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 561.9808659595,
+        "V": 151.3316112994,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0014"
+    },
+    {
+        "seq": 452,
+        "baseGeometrySeq": 1133301486,
+        "timestamp": 1302111887,
+        "PPP": 1,
+        "U": 367.8530641436,
+        "V": 58.1622048286,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0005"
+    },
+    {
+        "seq": 453,
+        "baseGeometrySeq": 1133301486,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 331.5853903126,
+        "V": 90.8473187998,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0008"
+    },
+    {
+        "seq": 454,
+        "baseGeometrySeq": 1133301486,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 384.6711183659,
+        "V": 24.4115339684,
+        "eccentricity": 0.0,
+        "gcpID": "NHXX0014"
+    },
+    {
+        "seq": 16310,
+        "baseGeometrySeq": 1192464776,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 998.8377212738,
+        "V": 875.3133403338,
+        "eccentricity": 0.0,
+        "gcpID": "EGXX0133"
+    },
+    {
+        "seq": 16311,
+        "baseGeometrySeq": 1192464776,
+        "timestamp": 1302111887,
+        "PPP": 0,
+        "U": 936.0500822035,
+        "V": 597.8657436602,
+        "eccentricity": 0.0,
+        "gcpID": "EGXX0130"
+    },
+    {
+        "seq": 20,
+        "baseGeometrySeq": 1304349335,
+        "timestamp": 1304349335,
+        "PPP": 0,
+        "U": 592.2478934485,
+        "V": 242.5629740443,
+        "eccentricity": 0.0,
+        "gcpID": "ASXX063"
+    },
+    {
+        "seq": 19,
+        "baseGeometrySeq": 1304349335,
+        "timestamp": 1304349335,
+        "PPP": 0,
+        "U": 713.4084666955,
+        "V": 513.5343858131,
+        "eccentricity": 0.0,
+        "gcpID": "ASXX059"
+    },
+    {
+        "seq": 18,
+        "baseGeometrySeq": 1304349335,
+        "timestamp": 1304349335,
+        "PPP": 0,
+        "U": 139.6974696387,
+        "V": 567.8097388456,
+        "eccentricity": 0.0,
+        "gcpID": "ASXX057"
+    },
+    {
+        "seq": 17,
+        "baseGeometrySeq": 1304349335,
+        "timestamp": 1304349335,
+        "PPP": 0,
+        "U": 1349.7896470859,
+        "V": 231.8939601806,
+        "eccentricity": 0.0,
+        "gcpID": "ASXX039"
+    },
+    {
+        "seq": 16312,
+        "baseGeometrySeq": 1318347229,
+        "timestamp": 1318347229,
+        "PPP": 0,
+        "U": 1173.0672063924,
+        "V": 823.0289034051,
+        "eccentricity": 0.0,
+        "gcpID": "VLXX0001"
+    },
+    {
+        "seq": 23,
+        "baseGeometrySeq": 1304603731,
+        "timestamp": 1304603732,
+        "PPP": 0,
+        "U": 948.5631503085,
+        "V": 600.4514267375,
+        "eccentricity": 0.0,
+        "gcpID": "EGXX0130"
+    },
+    {
+        "seq": 22,
+        "baseGeometrySeq": 1304603731,
+        "timestamp": 1304603732,
+        "PPP": 0,
+        "U": 1012.3335829467,
+        "V": 877.8887859781,
+        "eccentricity": 0.0,
+        "gcpID": "EGXX0133"
+    },
+    {
+        "seq": 21,
+        "baseGeometrySeq": 1304603731,
+        "timestamp": 1304603732,
+        "PPP": 0,
+        "U": 1176.9398056394,
+        "V": 224.8955846583,
+        "eccentricity": 0.0,
+        "gcpID": "EGXX0007"
+    },
+    {
+        "seq": 16313,
+        "baseGeometrySeq": 1318347229,
+        "timestamp": 1318347229,
+        "PPP": 0,
+        "U": 1358.0468832598,
+        "V": 824.1365661409,
+        "eccentricity": 0.0,
+        "gcpID": "VLXX0100"
+    },
+    {
+        "seq": 16314,
+        "baseGeometrySeq": 1318953065,
+        "timestamp": 1318953065,
+        "PPP": 0,
+        "U": 493.8006535948,
+        "V": 1120.4692810457,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0042"
+    },
+    {
+        "seq": 16315,
+        "baseGeometrySeq": 1318953065,
+        "timestamp": 1318953065,
+        "PPP": 0,
+        "U": 1498.2690183326,
+        "V": 702.5718651085,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0044"
+    },
+    {
+        "seq": 16316,
+        "baseGeometrySeq": 1318953065,
+        "timestamp": 1318953065,
+        "PPP": 0,
+        "U": 1976.225972062,
+        "V": 1741.0664077919,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0046"
+    },
+    {
+        "seq": 16317,
+        "baseGeometrySeq": 1318953065,
+        "timestamp": 1318953065,
+        "PPP": 0,
+        "U": 2270.848253815,
+        "V": 587.3893262597,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0047"
+    },
+    {
+        "seq": 16318,
+        "baseGeometrySeq": 1318953065,
+        "timestamp": 1318953065,
+        "PPP": 0,
+        "U": 2246.3145567944,
+        "V": 215.3593378615,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0049"
+    },
+    {
+        "seq": 16319,
+        "baseGeometrySeq": 1318953065,
+        "timestamp": 1318953065,
+        "PPP": 0,
+        "U": 50.2660130719,
+        "V": 1092.414379085,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0052"
+    },
+    {
+        "seq": 16320,
+        "baseGeometrySeq": 1332421553,
+        "timestamp": 1332421553,
+        "PPP": 0,
+        "U": 1859.894295302,
+        "V": 1836.7743288591,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0001"
+    },
+    {
+        "seq": 16321,
+        "baseGeometrySeq": 1332421553,
+        "timestamp": 1332421553,
+        "PPP": 0,
+        "U": 1396.2281879195,
+        "V": 1342.197147651,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0002"
+    },
+    {
+        "seq": 16322,
+        "baseGeometrySeq": 1332421553,
+        "timestamp": 1332421553,
+        "PPP": 0,
+        "U": 1168.2791878744,
+        "V": 527.8251993153,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0006"
+    },
+    {
+        "seq": 16323,
+        "baseGeometrySeq": 1332421553,
+        "timestamp": 1332421553,
+        "PPP": 0,
+        "U": 72.91426078,
+        "V": 772.3834389958,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0007"
+    },
+    {
+        "seq": 16324,
+        "baseGeometrySeq": 1333536390,
+        "timestamp": 1333536390,
+        "PPP": 0,
+        "U": 73.1863420957,
+        "V": 771.6898226476,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0007"
+    },
+    {
+        "seq": 16325,
+        "baseGeometrySeq": 1333536390,
+        "timestamp": 1333536390,
+        "PPP": 0,
+        "U": 2140.2484465827,
+        "V": 797.0755567353,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0003"
+    },
+    {
+        "seq": 16326,
+        "baseGeometrySeq": 1333536390,
+        "timestamp": 1333536390,
+        "PPP": 0,
+        "U": 1395.957766218,
+        "V": 1345.4642517445,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0002"
+    },
+    {
+        "seq": 16327,
+        "baseGeometrySeq": 1333538149,
+        "timestamp": 1333542890,
+        "PPP": 0,
+        "U": 75.0701778013,
+        "V": 770.569859347,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0007"
+    },
+    {
+        "seq": 16328,
+        "baseGeometrySeq": 1333538149,
+        "timestamp": 1333542890,
+        "PPP": 0,
+        "U": 2139.3032541266,
+        "V": 806.4029415643,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0003"
+    },
+    {
+        "seq": 16329,
+        "baseGeometrySeq": 1333538149,
+        "timestamp": 1333542890,
+        "PPP": 0,
+        "U": 1393.6805075068,
+        "V": 1352.1524428396,
+        "eccentricity": 0.0,
+        "gcpID": "SETE0002"
+    },
+    {
+        "seq": 16330,
+        "baseGeometrySeq": 1341392855,
+        "timestamp": 1341392856,
+        "PPP": 0,
+        "U": 1101.9432688338,
+        "V": 257.9745299291,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0066"
+    },
+    {
+        "seq": 16331,
+        "baseGeometrySeq": 1341392855,
+        "timestamp": 1341392856,
+        "PPP": 0,
+        "U": 788.75435858,
+        "V": 297.0215703362,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0092"
+    },
+    {
+        "seq": 16332,
+        "baseGeometrySeq": 1341393044,
+        "timestamp": 1341393044,
+        "PPP": 0,
+        "U": 685.3044188133,
+        "V": 844.1332538767,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0087"
+    },
+    {
+        "seq": 16333,
+        "baseGeometrySeq": 1341393044,
+        "timestamp": 1341393044,
+        "PPP": 0,
+        "U": 1006.7468469392,
+        "V": 636.7495817848,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0112"
+    },
+    {
+        "seq": 16334,
+        "baseGeometrySeq": 1341393190,
+        "timestamp": 1341393190,
+        "PPP": 0,
+        "U": 1073.620293904,
+        "V": 840.2993088128,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0083"
+    },
+    {
+        "seq": 16335,
+        "baseGeometrySeq": 1341393190,
+        "timestamp": 1341393190,
+        "PPP": 0,
+        "U": 822.3783852364,
+        "V": 465.0440574138,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0090"
+    },
+    {
+        "seq": 16336,
+        "baseGeometrySeq": 1341393309,
+        "timestamp": 1341393309,
+        "PPP": 0,
+        "U": 232.6272672904,
+        "V": 798.3212055192,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0141"
+    },
+    {
+        "seq": 16337,
+        "baseGeometrySeq": 1341393309,
+        "timestamp": 1341393309,
+        "PPP": 0,
+        "U": 429.635586313,
+        "V": 673.9794164638,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0143"
+    },
+    {
+        "seq": 16338,
+        "baseGeometrySeq": 1341393502,
+        "timestamp": 1341393502,
+        "PPP": 0,
+        "U": 63.5875621247,
+        "V": 538.8091170443,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0003"
+    },
+    {
+        "seq": 16339,
+        "baseGeometrySeq": 1341393502,
+        "timestamp": 1341393502,
+        "PPP": 0,
+        "U": 537.2505805459,
+        "V": 956.2639412192,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0079"
+    },
+    {
+        "seq": 16349,
+        "baseGeometrySeq": 1345124896,
+        "timestamp": 1345124896,
+        "PPP": 0,
+        "U": 830.5504848563,
+        "V": 575.0176513307,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0140"
+    },
+    {
+        "seq": 16348,
+        "baseGeometrySeq": 1345124896,
+        "timestamp": 1345124896,
+        "PPP": 0,
+        "U": 1217.8561655773,
+        "V": 261.3842564825,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0118"
+    },
+    {
+        "seq": 16347,
+        "baseGeometrySeq": 1345124896,
+        "timestamp": 1345124896,
+        "PPP": 0,
+        "U": 1144.6703353411,
+        "V": 625.3072220086,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0094"
+    },
+    {
+        "seq": 16346,
+        "baseGeometrySeq": 1345124896,
+        "timestamp": 1345124896,
+        "PPP": 0,
+        "U": 789.4210158486,
+        "V": 296.4241531035,
+        "eccentricity": 0.0,
+        "gcpID": "JSXX0092"
+    },
+    {
+        "seq": 16354,
+        "baseGeometrySeq": 1367504232,
+        "timestamp": 1367504272,
+        "PPP": 0,
+        "U": 674.5779356786,
+        "V": 1865.8787990969,
+        "eccentricity": 0.0,
+        "gcpID": "OSXX0065"
+    },
+    {
+        "seq": 16355,
+        "baseGeometrySeq": 1367504232,
+        "timestamp": 1367504272,
+        "PPP": 0,
+        "U": 284.0288500518,
+        "V": 686.7890269582,
+        "eccentricity": 0.0,
+        "gcpID": "OSXX0059"
+    },
+    {
+        "seq": 16356,
+        "baseGeometrySeq": 1367504232,
+        "timestamp": 1367504272,
+        "PPP": 0,
+        "U": 1872.6183167425,
+        "V": 1135.3338334985,
+        "eccentricity": 0.0,
+        "gcpID": "OSXX0053"
+    },
+    {
+        "seq": 16357,
+        "baseGeometrySeq": 1367504232,
+        "timestamp": 1367504272,
+        "PPP": 0,
+        "U": 2064.037619364,
+        "V": 873.5146178663,
+        "eccentricity": 0.0,
+        "gcpID": "OSXX0052"
+    },
+    {
+        "seq": 16358,
+        "baseGeometrySeq": 1437399206,
+        "timestamp": 1437399207,
+        "PPP": 0,
+        "U": 439.5483077124,
+        "V": 1942.2699017914,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0132"
+    },
+    {
+        "seq": 16359,
+        "baseGeometrySeq": 1437399206,
+        "timestamp": 1437399207,
+        "PPP": 0,
+        "U": 838.8943198336,
+        "V": 1914.2865865951,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0131"
+    },
+    {
+        "seq": 16360,
+        "baseGeometrySeq": 1437399206,
+        "timestamp": 1437399207,
+        "PPP": 0,
+        "U": 1535.4301106643,
+        "V": 1221.8394094367,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0129"
+    },
+    {
+        "seq": 16361,
+        "baseGeometrySeq": 1437399206,
+        "timestamp": 1437399207,
+        "PPP": 0,
+        "U": 1727.5569449013,
+        "V": 627.2366125901,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0127"
+    },
+    {
+        "seq": 16362,
+        "baseGeometrySeq": 1437399206,
+        "timestamp": 1437399207,
+        "PPP": 0,
+        "U": 620.7154691296,
+        "V": 450.1665190082,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0101"
+    },
+    {
+        "seq": 16363,
+        "baseGeometrySeq": 1437399206,
+        "timestamp": 1437399207,
+        "PPP": 0,
+        "U": 329.7397479018,
+        "V": 973.4086183938,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0125"
+    },
+    {
+        "seq": 16364,
+        "baseGeometrySeq": 1437399206,
+        "timestamp": 1437399207,
+        "PPP": 0,
+        "U": 1232.2917139704,
+        "V": 608.3844656177,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0123"
+    },
+    {
+        "seq": 16365,
+        "baseGeometrySeq": 1437399206,
+        "timestamp": 1437399207,
+        "PPP": 0,
+        "U": 1976.5714357712,
+        "V": 383.9966776836,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0121"
+    },
+    {
+        "seq": 16366,
+        "baseGeometrySeq": 1437399206,
+        "timestamp": 1437399207,
+        "PPP": 0,
+        "U": 171.2016710526,
+        "V": 674.6188290013,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0104"
+    },
+    {
+        "seq": 16367,
+        "baseGeometrySeq": 1437399206,
+        "timestamp": 1437399207,
+        "PPP": 0,
+        "U": 789.8307233009,
+        "V": 467.9131691942,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0102"
+    },
+    {
+        "seq": 16368,
+        "baseGeometrySeq": 1437399242,
+        "timestamp": 1437399242,
+        "PPP": 0,
+        "U": 439.5483077124,
+        "V": 1942.2699017914,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0132"
+    },
+    {
+        "seq": 16369,
+        "baseGeometrySeq": 1437399242,
+        "timestamp": 1437399242,
+        "PPP": 0,
+        "U": 838.8943198336,
+        "V": 1914.2865865951,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0131"
+    },
+    {
+        "seq": 16370,
+        "baseGeometrySeq": 1437399242,
+        "timestamp": 1437399242,
+        "PPP": 0,
+        "U": 1535.4301106643,
+        "V": 1221.8394094367,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0129"
+    },
+    {
+        "seq": 16371,
+        "baseGeometrySeq": 1437399242,
+        "timestamp": 1437399242,
+        "PPP": 0,
+        "U": 1727.5569449013,
+        "V": 627.2366125901,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0127"
+    },
+    {
+        "seq": 16372,
+        "baseGeometrySeq": 1437399242,
+        "timestamp": 1437399242,
+        "PPP": 0,
+        "U": 620.7154691296,
+        "V": 450.1665190082,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0101"
+    },
+    {
+        "seq": 16373,
+        "baseGeometrySeq": 1437399242,
+        "timestamp": 1437399242,
+        "PPP": 0,
+        "U": 329.7397479018,
+        "V": 973.4086183938,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0125"
+    },
+    {
+        "seq": 16374,
+        "baseGeometrySeq": 1437399242,
+        "timestamp": 1437399242,
+        "PPP": 0,
+        "U": 1232.2917139704,
+        "V": 608.3844656177,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0123"
+    },
+    {
+        "seq": 16375,
+        "baseGeometrySeq": 1437399242,
+        "timestamp": 1437399242,
+        "PPP": 0,
+        "U": 1976.5714357712,
+        "V": 383.9966776836,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0121"
+    },
+    {
+        "seq": 16376,
+        "baseGeometrySeq": 1437399242,
+        "timestamp": 1437399242,
+        "PPP": 0,
+        "U": 171.2016710526,
+        "V": 674.6188290013,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0104"
+    },
+    {
+        "seq": 16377,
+        "baseGeometrySeq": 1437399242,
+        "timestamp": 1437399242,
+        "PPP": 0,
+        "U": 789.8307233009,
+        "V": 467.9131691942,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0102"
+    },
+    {
+        "seq": 16378,
+        "baseGeometrySeq": 1437400630,
+        "timestamp": 1437400630,
+        "PPP": 0,
+        "U": 439.5483077124,
+        "V": 1942.2699017914,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0132"
+    },
+    {
+        "seq": 16379,
+        "baseGeometrySeq": 1437400630,
+        "timestamp": 1437400630,
+        "PPP": 0,
+        "U": 838.8943198336,
+        "V": 1914.2865865951,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0131"
+    },
+    {
+        "seq": 16380,
+        "baseGeometrySeq": 1437400630,
+        "timestamp": 1437400630,
+        "PPP": 0,
+        "U": 1535.4301106643,
+        "V": 1221.8394094367,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0129"
+    },
+    {
+        "seq": 16381,
+        "baseGeometrySeq": 1437400630,
+        "timestamp": 1437400630,
+        "PPP": 0,
+        "U": 1727.5569449013,
+        "V": 627.2366125901,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0127"
+    },
+    {
+        "seq": 16382,
+        "baseGeometrySeq": 1437400630,
+        "timestamp": 1437400630,
+        "PPP": 0,
+        "U": 620.7154691296,
+        "V": 450.1665190082,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0101"
+    },
+    {
+        "seq": 16383,
+        "baseGeometrySeq": 1437400630,
+        "timestamp": 1437400630,
+        "PPP": 0,
+        "U": 329.7397479018,
+        "V": 973.4086183938,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0125"
+    },
+    {
+        "seq": 16384,
+        "baseGeometrySeq": 1437400630,
+        "timestamp": 1437400630,
+        "PPP": 0,
+        "U": 1232.2917139704,
+        "V": 608.3844656177,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0123"
+    },
+    {
+        "seq": 16385,
+        "baseGeometrySeq": 1437400630,
+        "timestamp": 1437400630,
+        "PPP": 0,
+        "U": 1976.5714357712,
+        "V": 383.9966776836,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0121"
+    },
+    {
+        "seq": 16386,
+        "baseGeometrySeq": 1437400630,
+        "timestamp": 1437400630,
+        "PPP": 0,
+        "U": 171.2016710526,
+        "V": 674.6188290013,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0104"
+    },
+    {
+        "seq": 16387,
+        "baseGeometrySeq": 1437400630,
+        "timestamp": 1437400630,
+        "PPP": 0,
+        "U": 789.8307233009,
+        "V": 467.9131691942,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0102"
+    },
+    {
+        "seq": 16388,
+        "baseGeometrySeq": 1437400653,
+        "timestamp": 1437400653,
+        "PPP": 0,
+        "U": 439.5483077124,
+        "V": 1942.2699017914,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0132"
+    },
+    {
+        "seq": 16389,
+        "baseGeometrySeq": 1437400653,
+        "timestamp": 1437400653,
+        "PPP": 0,
+        "U": 838.8943198336,
+        "V": 1914.2865865951,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0131"
+    },
+    {
+        "seq": 16390,
+        "baseGeometrySeq": 1437400653,
+        "timestamp": 1437400653,
+        "PPP": 0,
+        "U": 1535.4301106643,
+        "V": 1221.8394094367,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0129"
+    },
+    {
+        "seq": 16391,
+        "baseGeometrySeq": 1437400653,
+        "timestamp": 1437400653,
+        "PPP": 0,
+        "U": 1727.5569449013,
+        "V": 627.2366125901,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0127"
+    },
+    {
+        "seq": 16392,
+        "baseGeometrySeq": 1437400653,
+        "timestamp": 1437400653,
+        "PPP": 0,
+        "U": 620.7154691296,
+        "V": 450.1665190082,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0101"
+    },
+    {
+        "seq": 16393,
+        "baseGeometrySeq": 1437400653,
+        "timestamp": 1437400653,
+        "PPP": 0,
+        "U": 329.7397479018,
+        "V": 973.4086183938,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0125"
+    },
+    {
+        "seq": 16394,
+        "baseGeometrySeq": 1437400653,
+        "timestamp": 1437400653,
+        "PPP": 0,
+        "U": 1232.2917139704,
+        "V": 608.3844656177,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0123"
+    },
+    {
+        "seq": 16395,
+        "baseGeometrySeq": 1437400653,
+        "timestamp": 1437400653,
+        "PPP": 0,
+        "U": 1976.5714357712,
+        "V": 383.9966776836,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0121"
+    },
+    {
+        "seq": 16396,
+        "baseGeometrySeq": 1437400653,
+        "timestamp": 1437400654,
+        "PPP": 0,
+        "U": 171.2016710526,
+        "V": 674.6188290013,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0104"
+    },
+    {
+        "seq": 16397,
+        "baseGeometrySeq": 1437400653,
+        "timestamp": 1437400654,
+        "PPP": 0,
+        "U": 789.8307233009,
+        "V": 467.9131691942,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0102"
+    },
+    {
+        "seq": 16398,
+        "baseGeometrySeq": 1438083899,
+        "timestamp": 1438083900,
+        "PPP": 0,
+        "U": 1040.4260443694,
+        "V": 1859.1931746688,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0133"
+    },
+    {
+        "seq": 16399,
+        "baseGeometrySeq": 1438083899,
+        "timestamp": 1438083900,
+        "PPP": 0,
+        "U": 1729.1429174534,
+        "V": 125.8131371052,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0136"
+    },
+    {
+        "seq": 16400,
+        "baseGeometrySeq": 1438090700,
+        "timestamp": 1438090702,
+        "PPP": 0,
+        "U": 2187.3571683522,
+        "V": 1774.7013484037,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0141"
+    },
+    {
+        "seq": 16401,
+        "baseGeometrySeq": 1438091425,
+        "timestamp": 1438091425,
+        "PPP": 0,
+        "U": 1040.4260443694,
+        "V": 1859.1931746688,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0133"
+    },
+    {
+        "seq": 16402,
+        "baseGeometrySeq": 1438091425,
+        "timestamp": 1438091425,
+        "PPP": 0,
+        "U": 1729.1429174534,
+        "V": 125.8131371052,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0136"
+    },
+    {
+        "seq": 16403,
+        "baseGeometrySeq": 1450799292,
+        "timestamp": 1450799292,
+        "PPP": 0,
+        "U": 1696.9645897558,
+        "V": 1535.851516962,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0138"
+    },
+    {
+        "seq": 16404,
+        "baseGeometrySeq": 1450799292,
+        "timestamp": 1450799292,
+        "PPP": 0,
+        "U": 2234.2637481666,
+        "V": 1100.6204687945,
+        "eccentricity": 0.0,
+        "gcpID": "MKXX0139"
+    }
+]

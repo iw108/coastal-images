@@ -1,0 +1,782 @@
+[
+    {
+        "name": "Yaquina Head, OR first ever",
+        "seq": 76,
+        "timestamp": 1302111250,
+        "siteID": "YAXXXXX",
+        "timeOUT": 869177500,
+        "timeIN": 707640000,
+        "shortName": "argus00",
+        "id": "YAXX00S"
+    },
+    {
+        "name": "Yaquina Head, OR SGI",
+        "seq": 77,
+        "timestamp": 1302111250,
+        "siteID": "YAXXXXX",
+        "timeOUT": 0,
+        "timeIN": 869177501,
+        "shortName": "argus00",
+        "id": "YAXX01S"
+    },
+    {
+        "name": "Duck, NC, DIPIX",
+        "seq": 78,
+        "timestamp": 1302111250,
+        "siteID": "DUXXXXX",
+        "timeOUT": 880156800,
+        "timeIN": 728197200,
+        "shortName": "argus02",
+        "id": "DUXX00S"
+    },
+    {
+        "name": "Duck, NC, SGI",
+        "seq": 95,
+        "timestamp": 1302111250,
+        "siteID": "DUXXXXX",
+        "timeOUT": 1110384000,
+        "timeIN": 874181600,
+        "shortName": "argus02a",
+        "id": "DUXX01S"
+    },
+    {
+        "name": "Duck, NC, video tape",
+        "seq": 79,
+        "timestamp": 1302111250,
+        "siteID": "DUXXXXX",
+        "timeOUT": 728197100,
+        "timeIN": 528560000,
+        "shortName": "argus02",
+        "id": "DUXX03S"
+    },
+    {
+        "name": "Droskyn Pt.",
+        "seq": 80,
+        "timestamp": 1302111250,
+        "siteID": "DRXXXXX",
+        "timeOUT": 919641599,
+        "timeIN": 838825203,
+        "shortName": "droskyn",
+        "id": "DRXX00S"
+    },
+    {
+        "name": "Lake Erie, OH, USGS",
+        "seq": 81,
+        "timestamp": 1302111250,
+        "siteID": "ERXXXXX",
+        "timeOUT": 834853000,
+        "timeIN": 746123696,
+        "shortName": "voyeur02",
+        "id": "ERXX00S"
+    },
+    {
+        "name": "Waimea Bay, HI",
+        "seq": 82,
+        "timestamp": 1302111250,
+        "siteID": "WAXXXXX",
+        "timeOUT": 944000000,
+        "timeIN": 790135000,
+        "shortName": "waimea1",
+        "id": "WAXX00S"
+    },
+    {
+        "name": "Noordwijk aan Zee, Holland",
+        "seq": 83,
+        "timestamp": 1302111250,
+        "siteID": "NOXXXXX",
+        "timeOUT": 905962599,
+        "timeIN": 795281772,
+        "shortName": "nordzee1",
+        "id": "NOXX00S"
+    },
+    {
+        "name": "Noordwijk aan Zee, Holland, SGI",
+        "seq": 84,
+        "timestamp": 1302111250,
+        "siteID": "NOXXXXX",
+        "timeOUT": 0,
+        "timeIN": 905962600,
+        "shortName": "nordzee1",
+        "id": "NOXX01S"
+    },
+    {
+        "name": "Scripps, La Jolla, CA",
+        "seq": 85,
+        "timestamp": 1302111250,
+        "siteID": "SCXXXXX",
+        "timeOUT": 907887605,
+        "timeIN": 770972400,
+        "shortName": "argus04",
+        "id": "SCXX00S"
+    },
+    {
+        "name": "Scripps, La Jolla, CA SGI",
+        "seq": 86,
+        "timestamp": 1302111250,
+        "siteID": "SCXXXXX",
+        "timeOUT": 0,
+        "timeIN": 907887610,
+        "shortName": "argus04",
+        "id": "SCXX01S"
+    },
+    {
+        "name": "Palm Beach, NSW, Austrialia",
+        "seq": 87,
+        "timestamp": 1302111250,
+        "siteID": "PAXXXXX",
+        "timeOUT": 886220200,
+        "timeIN": 822420029,
+        "shortName": "palmetto",
+        "id": "PAXX00S"
+    },
+    {
+        "name": "Palm Beach, NSW, Austrialia SGI",
+        "seq": 88,
+        "timestamp": 1302111251,
+        "siteID": "PAXXXXX",
+        "timeOUT": 0,
+        "timeIN": 886220201,
+        "shortName": "palmetto",
+        "id": "PAXX01S"
+    },
+    {
+        "name": "Muriwai Beach, NZ",
+        "seq": 89,
+        "timestamp": 1302111251,
+        "siteID": "MUXXXXX",
+        "timeOUT": 0,
+        "timeIN": 886460400,
+        "shortName": "muriwai1",
+        "id": "MUXX00S"
+    },
+    {
+        "name": "Egmond aan Zee, Holland",
+        "seq": 71,
+        "timestamp": 1302111251,
+        "siteID": "EGXXXXX",
+        "timeOUT": 1077278340,
+        "timeIN": 892738800,
+        "shortName": "egmond",
+        "id": "EGXX00S"
+    },
+    {
+        "name": "Teignmouth, UK",
+        "seq": 107,
+        "timestamp": 1302111251,
+        "siteID": "TIXXXXX",
+        "timeOUT": 1113523240,
+        "timeIN": 919356276,
+        "shortName": "tinmuth",
+        "id": "TIXX00S"
+    },
+    {
+        "name": "Droskyn Pt. SGI",
+        "seq": 108,
+        "timestamp": 1302111251,
+        "siteID": "DRXXXXX",
+        "timeOUT": 1155550000,
+        "timeIN": 919641600,
+        "shortName": "droskyn",
+        "id": "DRXX01S"
+    },
+    {
+        "name": "Coastal Sediments",
+        "seq": 91,
+        "timestamp": 1302111251,
+        "siteID": "CSXXXXX",
+        "timeOUT": 0,
+        "timeIN": 0,
+        "shortName": "cs0",
+        "id": "CSXX01S"
+    },
+    {
+        "name": "OSU out the Window",
+        "seq": 92,
+        "timestamp": 1302111251,
+        "siteID": "CAXXXXX",
+        "timeOUT": 0,
+        "timeIN": 889000000,
+        "shortName": "camilla",
+        "id": "CAXX01S"
+    },
+    {
+        "name": "Waimea Bay, HI",
+        "seq": 93,
+        "timestamp": 1302111251,
+        "siteID": "WAXXXXX",
+        "timeOUT": 0,
+        "timeIN": 979000000,
+        "shortName": "waimea1",
+        "id": "WAXX01S"
+    },
+    {
+        "name": "Blacks Beach, La Jolla, CA Firewire",
+        "seq": 22,
+        "timestamp": 1302111251,
+        "siteID": "BLXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1064707000,
+        "shortName": "blacky3",
+        "id": "BLXX02S"
+    },
+    {
+        "name": "monterey bay rip expt 2000",
+        "seq": 23,
+        "timestamp": 1302111251,
+        "siteID": "REXXXXX",
+        "timeOUT": 0,
+        "timeIN": 986083200,
+        "shortName": "ripex",
+        "id": "REXX01W"
+    },
+    {
+        "name": "Camp Pendleton, CA, SGI",
+        "seq": 24,
+        "timestamp": 1302111251,
+        "siteID": "PEXXXXX",
+        "timeOUT": 0,
+        "timeIN": 925516800,
+        "shortName": "pendycam",
+        "id": "PEXX01S"
+    },
+    {
+        "name": "Bay St Louis, SGI",
+        "seq": 25,
+        "timestamp": 1302111251,
+        "siteID": "LUXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1012348800,
+        "shortName": "louie",
+        "id": "LUXX01S"
+    },
+    {
+        "name": "Vicksburg, MS LSTF",
+        "seq": 26,
+        "timestamp": 1302111251,
+        "siteID": "VIXXXXX",
+        "timeOUT": 0,
+        "timeIN": 991180800,
+        "shortName": "vicks01",
+        "id": "VIXX001"
+    },
+    {
+        "name": "bill schmidt scripps rip exp",
+        "seq": 27,
+        "timestamp": 1302111251,
+        "siteID": "BILLSXX",
+        "timeOUT": 0,
+        "timeIN": 994118400,
+        "shortName": "Bill scr",
+        "id": "BIXXXXX"
+    },
+    {
+        "name": "bill schmidt scripps rip exp",
+        "seq": 28,
+        "timestamp": 1302111251,
+        "siteID": "BILLSXX",
+        "timeOUT": 0,
+        "timeIN": 994118400,
+        "shortName": "Billscri",
+        "id": "BIXX001"
+    },
+    {
+        "name": "Duck, NC, SGI from tape",
+        "seq": 29,
+        "timestamp": 1302111251,
+        "siteID": "DUXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1,
+        "shortName": "ducktape",
+        "id": "DUXX04S"
+    },
+    {
+        "name": "Test Station",
+        "seq": 30,
+        "timestamp": 1302111251,
+        "siteID": "XXXXXXX",
+        "timeOUT": 0,
+        "timeIN": 0,
+        "shortName": "testem",
+        "id": "XXXX00S"
+    },
+    {
+        "name": "Marina, Monterey, CA",
+        "seq": 31,
+        "timestamp": 1302111251,
+        "siteID": "MOXXXXX",
+        "timeOUT": 0,
+        "timeIN": 0,
+        "shortName": "monty",
+        "id": "MOXX01S"
+    },
+    {
+        "name": "Egmond, Jan van Speyk Lighthouse",
+        "seq": 72,
+        "timestamp": 1302111251,
+        "siteID": "JSXXXXX",
+        "timeOUT": 1170028800,
+        "timeIN": 927903600,
+        "shortName": "jvspeijk",
+        "id": "JSXX00S"
+    },
+    {
+        "name": "Lido di Dante, Italy",
+        "seq": 69,
+        "timestamp": 1302111251,
+        "siteID": "LDXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1044835200,
+        "shortName": "lidante",
+        "id": "LDXX00S"
+    },
+    {
+        "name": "Santander, Spain",
+        "seq": 68,
+        "timestamp": 1302111251,
+        "siteID": "SAXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1036713600,
+        "shortName": "santand",
+        "id": "SAXX00S"
+    },
+    {
+        "name": "Blacks Beach, La Jolla, CA NCEX",
+        "seq": 35,
+        "timestamp": 1302111251,
+        "siteID": "BLXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1064707000,
+        "shortName": "blacky",
+        "id": "BLXX01S"
+    },
+    {
+        "name": "Blacks Beach, La Jolla, CA",
+        "seq": 36,
+        "timestamp": 1302111251,
+        "siteID": "BLXXXXX",
+        "timeOUT": 1064706999,
+        "timeIN": 1003000000,
+        "shortName": "blacky",
+        "id": "BLXX00S"
+    },
+    {
+        "name": "wave tank",
+        "seq": 37,
+        "timestamp": 1302111251,
+        "siteID": "TSXXXXX",
+        "timeOUT": 0,
+        "timeIN": 0,
+        "shortName": "tsue01",
+        "id": "TSXX00S"
+    },
+    {
+        "name": "Palm Beach, NSW Australia Firewire",
+        "seq": 38,
+        "timestamp": 1302111251,
+        "siteID": "PAXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1075856001,
+        "shortName": "palmetto",
+        "id": "PAXX02S"
+    },
+    {
+        "name": "North Head, Washington",
+        "seq": 100,
+        "timestamp": 1302111251,
+        "siteID": "NHXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1074171600,
+        "shortName": "nrthhead",
+        "id": "NHXX00S"
+    },
+    {
+        "name": "NRLs DX700 (XCD and DFW) Firewire Cameras",
+        "seq": 40,
+        "timestamp": 1302111251,
+        "siteID": "B2XXXXX",
+        "timeOUT": 1072828800,
+        "timeIN": 1062374400,
+        "shortName": "nrlncex2",
+        "id": "B2XX02S"
+    },
+    {
+        "name": "NRLs SX900 (XCD and DFW) Firewire Cameras",
+        "seq": 41,
+        "timestamp": 1302111251,
+        "siteID": "B2XXXXX",
+        "timeOUT": 1072828800,
+        "timeIN": 1062374400,
+        "shortName": "nrlncex1",
+        "id": "B2XX01S"
+    },
+    {
+        "name": "Egmond aan Zee, Holland",
+        "seq": 73,
+        "timestamp": 1302111251,
+        "siteID": "EGXXXXX",
+        "timeOUT": 1108166400,
+        "timeIN": 1077278400,
+        "shortName": "egmond",
+        "id": "EGXX01S"
+    },
+    {
+        "name": "Isola del Giglio, Digital",
+        "seq": 43,
+        "timestamp": 1302111251,
+        "siteID": "GIXXXXX",
+        "timeOUT": 1041292800,
+        "timeIN": 1036108800,
+        "shortName": "giglio0",
+        "id": "GIXX00S"
+    },
+    {
+        "name": "Marciana Marina, Digital",
+        "seq": 44,
+        "timestamp": 1302111251,
+        "siteID": "MMXXXXX",
+        "timeOUT": 1055030400,
+        "timeIN": 1054425600,
+        "shortName": "marmar1",
+        "id": "MMXX00N"
+    },
+    {
+        "name": "Camp Pendleton, CA, Transparent Hunter, ITI",
+        "seq": 45,
+        "timestamp": 1302111251,
+        "siteID": "PEXXXXX",
+        "timeOUT": 1049068800,
+        "timeIN": 1041379200,
+        "shortName": "tranhunt",
+        "id": "PEXX02S"
+    },
+    {
+        "name": "Duck, NC, Firewire",
+        "seq": 94,
+        "timestamp": 1302111251,
+        "siteID": "DUXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1110387000,
+        "shortName": "argus02a",
+        "id": "DUXX05S"
+    },
+    {
+        "name": "Egmond aan Zee, Holland",
+        "seq": 74,
+        "timestamp": 1302111251,
+        "siteID": "EGXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1123581600,
+        "shortName": "egmond",
+        "id": "EGXX02S"
+    },
+    {
+        "name": "Rio San Pedro, Andalucia, Spain",
+        "seq": 98,
+        "timestamp": 1302111251,
+        "siteID": "SPXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1089288000,
+        "shortName": "sanpedro",
+        "id": "SPXX00S"
+    },
+    {
+        "name": "Slapton Sands, Devon, UK",
+        "seq": 62,
+        "timestamp": 1302111251,
+        "siteID": "SLXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1120236276,
+        "shortName": "slapton",
+        "id": "SLXX00S"
+    },
+    {
+        "name": "Cleveleys, UK",
+        "seq": 114,
+        "timestamp": 1302111251,
+        "siteID": "CSXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1121731200,
+        "shortName": "cleves",
+        "id": "CSXX00S"
+    },
+    {
+        "name": "Cleveleys, UK",
+        "seq": 115,
+        "timestamp": 1302111251,
+        "siteID": "CNXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1114732800,
+        "shortName": "cleven",
+        "id": "CNXX00S"
+    },
+    {
+        "name": "Anglet, France",
+        "seq": 65,
+        "timestamp": 1302111251,
+        "siteID": "ANXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1107216000,
+        "shortName": "anglet",
+        "id": "ANXX00S"
+    },
+    {
+        "name": "Delta Flume, Delft Hydraulics",
+        "seq": 75,
+        "timestamp": 1302111251,
+        "siteID": "DEXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1133395200,
+        "shortName": "delta",
+        "id": "DEXX00S"
+    },
+    {
+        "name": "Carchuna, Andalucia, Spain",
+        "seq": 96,
+        "timestamp": 1302111251,
+        "siteID": "CRXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1038441600,
+        "shortName": "carchuna",
+        "id": "CRXX00S"
+    },
+    {
+        "name": "Trafalgar, Andalucia, Spain",
+        "seq": 97,
+        "timestamp": 1302111251,
+        "siteID": "TRXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1057968000,
+        "shortName": "trafalga",
+        "id": "TRXX00S"
+    },
+    {
+        "name": "MAPFRE Tower Barcelona, Spain",
+        "seq": 99,
+        "timestamp": 1302111251,
+        "siteID": "MAXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1003492800,
+        "shortName": "mapfre",
+        "id": "MAXX00S"
+    },
+    {
+        "name": "Miyazaki Beach, Japan",
+        "seq": 101,
+        "timestamp": 1302111251,
+        "siteID": "MZXXXXX",
+        "timeOUT": 0,
+        "timeIN": 998438400,
+        "shortName": "miyazaki",
+        "id": "MZXX01S"
+    },
+    {
+        "name": "Gold Coast, Queensland, Australia",
+        "seq": 102,
+        "timestamp": 1302111251,
+        "siteID": "GCXXXXX",
+        "timeOUT": 0,
+        "timeIN": 931737600,
+        "shortName": "goldcst",
+        "id": "GCXX00S"
+    },
+    {
+        "name": "Duranbah, Tweed Entrance, Australia",
+        "seq": 103,
+        "timestamp": 1302111251,
+        "siteID": "DHXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1027382400,
+        "shortName": "duranbah",
+        "id": "DHXX00S"
+    },
+    {
+        "name": "Rainbow Bay, Tweed Entrance, Australia",
+        "seq": 104,
+        "timestamp": 1302111251,
+        "siteID": "RAXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1027382400,
+        "shortName": "rainbow",
+        "id": "RAXX00S"
+    },
+    {
+        "name": "Coolangatta, Tweed Entrance, Australia",
+        "seq": 105,
+        "timestamp": 1302111251,
+        "siteID": "COXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1027382400,
+        "shortName": "coolgtta",
+        "id": "COXX00S"
+    },
+    {
+        "name": "Kirra Point, Tweed Entrance, Australia",
+        "seq": 106,
+        "timestamp": 1302111251,
+        "siteID": "KIXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1027382400,
+        "shortName": "kirra",
+        "id": "KIXX00S"
+    },
+    {
+        "name": "Teignmouth, UK",
+        "seq": 109,
+        "timestamp": 1302111251,
+        "siteID": "TIXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1155816000,
+        "shortName": "tinmuth",
+        "id": "TIXX01S"
+    },
+    {
+        "name": "Droskyn Pt. FW",
+        "seq": 110,
+        "timestamp": 1302111251,
+        "siteID": "DRXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1155556000,
+        "shortName": "droskyn",
+        "id": "DRXX02S"
+    },
+    {
+        "name": "SleeptankStation",
+        "seq": 111,
+        "timestamp": 1302111251,
+        "siteID": "STXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1162209600,
+        "shortName": "SlpTank",
+        "id": "STXX00S"
+    },
+    {
+        "name": "Egmond, Jan van Speyk Lighthouse",
+        "seq": 112,
+        "timestamp": 1302111251,
+        "siteID": "JSXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1170082800,
+        "shortName": "jvspeijk",
+        "id": "JSXX01S"
+    },
+    {
+        "name": "Milford on Sea, UK",
+        "seq": 113,
+        "timestamp": 1302111251,
+        "siteID": "MFXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1169645400,
+        "shortName": "milford",
+        "id": "MFXX00S"
+    },
+    {
+        "name": "Boscombe, UK",
+        "seq": 117,
+        "timestamp": 1302111251,
+        "siteID": "BCXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1173717000,
+        "shortName": "boscombe",
+        "id": "BCXX00S"
+    },
+    {
+        "name": "Aberdeen (south), UK",
+        "seq": 125,
+        "timestamp": 1302111251,
+        "siteID": "ASXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1184371200,
+        "shortName": "aberdees",
+        "id": "ASXX00S"
+    },
+    {
+        "name": "Vinje Basin 1",
+        "seq": 127,
+        "timestamp": 1302111251,
+        "siteID": "VJXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1199145600,
+        "shortName": "vinje01",
+        "id": "VJXX00S"
+    },
+    {
+        "name": "Aberdeen (north), UK",
+        "seq": 129,
+        "timestamp": 1302111251,
+        "siteID": "ABXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1200657600,
+        "shortName": "aberdeen",
+        "id": "ABXX00S"
+    },
+    {
+        "name": "Galgeplaat, NL",
+        "seq": 132,
+        "timestamp": 1302111251,
+        "siteID": "GPXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1233043200,
+        "shortName": "galg",
+        "id": "GPXX00S"
+    },
+    {
+        "name": "Vlugtenburg",
+        "seq": 133,
+        "timestamp": 1302111251,
+        "siteID": "VLXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1275350400,
+        "shortName": "vlugten",
+        "id": "VLXX01S"
+    },
+    {
+        "name": "Sete station",
+        "seq": 1,
+        "timestamp": 1309894534,
+        "siteID": "SETEXXX",
+        "timeOUT": 0,
+        "timeIN": 1302739200,
+        "shortName": "sete",
+        "id": "SETE00S"
+    },
+    {
+        "name": "Ostend",
+        "seq": 136,
+        "timestamp": 1350983908,
+        "siteID": "OSXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1330905600,
+        "shortName": "oostende",
+        "id": "OSXX00S"
+    },
+    {
+        "name": "ZandMotor Mast",
+        "seq": 137,
+        "timestamp": 1366377967,
+        "siteID": "ZMXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1361318400,
+        "shortName": "zandmotor",
+        "id": "ZMXX00S"
+    },
+    {
+        "name": "Kijkduin Atlantic Hotel",
+        "seq": 140,
+        "timestamp": 1350655250,
+        "siteID": "KDXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1348099200,
+        "shortName": "kijkduin",
+        "id": "KDXX00S"
+    },
+    {
+        "name": "Mariakerke",
+        "seq": 144,
+        "timestamp": 1408461464,
+        "siteID": "MKXXXXX",
+        "timeOUT": 0,
+        "timeIN": 1404864000,
+        "shortName": "mariakerke",
+        "id": "MKXX00S"
+    }
+]

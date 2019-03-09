@@ -1,0 +1,434 @@
+[
+    {
+        "comment": " Converts European 'zed' to US 'z' in strings",
+        "seq": 48,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " comic",
+        "path": "CILTools/zed2Z.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Converts US 'z' to European 'zed' in strings",
+        "seq": 47,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " comic",
+        "path": "CILTools/z2Zed.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Look for commands anaywhere in your path",
+        "seq": 46,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " misc",
+        "path": "CILTools/whereis.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Unpacks a brightest pixels file into text",
+        "seq": 45,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " SandyDuck data",
+        "path": "CILTools/unpackSD97Binary.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Unpacks a file made by b2mat.pl into Matlab",
+        "seq": 44,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " pixelExtract",
+        "path": "CILTools/unpackBrightest.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Displays pixel resolution map for any site",
+        "seq": 43,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " pixelDesign",
+        "path": "CILTools/showResMap.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Shows a pair of structs to see differences",
+        "seq": 42,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " misc",
+        "path": "CILTools/showPairedStructs.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " more off",
+        "seq": 41,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " comic",
+        "path": "CILTools/savant.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Make one structure look like another",
+        "seq": 40,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " misc",
+        "path": "CILTools/sanitize.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Releases '_' as subscript command",
+        "seq": 39,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " misc",
+        "path": "CILTools/safeString.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Restore a figure's properties",
+        "seq": 38,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " figure",
+        "path": "CILTools/restorefig.m",
+        "hrmC": 1
+    },
+    {
+        "comment": "Resolution mapping at a point",
+        "seq": 37,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " geometry merge pixelDesign siteDesign",
+        "path": "CILTools/resMap.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Make a record of who called a function",
+        "seq": 36,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " misc",
+        "path": "CILTools/recordPath.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Converts radians to degrees",
+        "seq": 35,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " geometry",
+        "path": "CILTools/rad2deg.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Preview a figure to be exported using EXPORTFIG",
+        "seq": 34,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " figure",
+        "path": "CILTools/previewfig.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Chops argus filenmae into pieces",
+        "seq": 33,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " filename",
+        "path": "CILTools/parseFilename.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Tests UV coordinates for being in the image",
+        "seq": 32,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " quality",
+        "path": "CILTools/onScreen.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Converts Matlab time to Julian day number",
+        "seq": 31,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " time",
+        "path": "CILTools/matlab2Julian.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Converts Matlab time to epoch time",
+        "seq": 30,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " time",
+        "path": "CILTools/matlab2Epoch.m",
+        "hrmC": 1
+    },
+    {
+        "comment": "Station resolution mapping routine",
+        "seq": 29,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " geometry merge pixelDesign siteDesign",
+        "path": "CILTools/makeResMap.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Converts Julian day/year into Matlab datenum",
+        "seq": 28,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " time",
+        "path": "CILTools/julian2Matlab.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Tests whether UV coordinates are within image",
+        "seq": 27,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " quality",
+        "path": "CILTools/inImage.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " more on",
+        "seq": 26,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " comic",
+        "path": "CILTools/imbecile.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Reports various image quality factors",
+        "seq": 25,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " quality",
+        "path": "CILTools/imageQuality.m",
+        "hrmC": 1
+    },
+    {
+        "comment": "",
+        "seq": 24,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " time",
+        "path": "CILTools/gmtime.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Get predicted tide data from Xtide",
+        "seq": 23,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " tides",
+        "path": "CILTools/getXtideTide.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Confidence intervals from nonlinear fit",
+        "seq": 22,
+        "timestamp": 0,
+        "internal": 1,
+        "words": " autogeom",
+        "path": "CILTools/getNLinCI.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Converts UV to XYZ for known X, Y or Z.",
+        "seq": 21,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " geometry",
+        "path": "CILTools/findXYZ.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Returns image coordinates of real world coordinates",
+        "seq": 20,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " geometry",
+        "path": "CILTools/findUV.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Finds coordinate conversion matrices",
+        "seq": 19,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " geometry",
+        "path": "CILTools/findPlaneTransformation.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Finds the names of specific Argus images",
+        "seq": 18,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " misc",
+        "path": "CILTools/findArgusImages.m",
+        "hrmC": 1
+    },
+    {
+        "comment": "Writes the figure H to FILENAME",
+        "seq": 17,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " figure",
+        "path": "CILTools/exportfig.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Returns a double with current epoch time",
+        "seq": 16,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " time",
+        "path": "CILTools/epochtime.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Converts epoch time to Matlab datenum",
+        "seq": 15,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " time",
+        "path": "CILTools/epoch2Matlab.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Returns an epoch time string",
+        "seq": 14,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " time",
+        "path": "CILTools/epoch2LocalString.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Converts epoch time into ascii GMT",
+        "seq": 13,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " time",
+        "path": "CILTools/epoch2GMTString.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Converts epoch time to GMT",
+        "seq": 12,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " time",
+        "path": "CILTools/epoch2GMT.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Converts epoch time to \"epoch year\"",
+        "seq": 11,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " time",
+        "path": "CILTools/epoch2EpochYear.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Draws the x and y axes in a figure, if needed",
+        "seq": 10,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " figure",
+        "path": "CILTools/drawAxis.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Converts degrees to radians",
+        "seq": 9,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " geometry",
+        "path": "CILTools/deg2rad.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Converts ascii time into epoch time",
+        "seq": 8,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " time",
+        "path": "CILTools/ctime2Epoch.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Extracts file name from path",
+        "seq": 7,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " filename",
+        "path": "CILTools/basename.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Creates an Argus file name from data",
+        "seq": 6,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " filename",
+        "path": "CILTools/argusFilename.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Creates the julian day argus directory name",
+        "seq": 5,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " time",
+        "path": "CILTools/argusDay.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Apply EXPORTFIG options to figure",
+        "seq": 4,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " figure",
+        "path": "CILTools/applytofig.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Makes rotation matrix from angles",
+        "seq": 3,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " geometry",
+        "path": "CILTools/angles2R.m",
+        "hrmC": 1
+    },
+    {
+        "comment": " Converts angles, cam/IP info into M vector",
+        "seq": 2,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " geometry",
+        "path": "CILTools/angles2M.m",
+        "hrmC": 1
+    },
+    {
+        "comment": "",
+        "seq": 1,
+        "timestamp": 0,
+        "internal": 0,
+        "words": " doc",
+        "path": "CILTools/Contents.m",
+        "hrmC": 1
+    }
+]

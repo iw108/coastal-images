@@ -1,0 +1,322 @@
+[
+    {
+        "seq": 53,
+        "f": 0.0,
+        "timestamp": 1302111641,
+        "make": "Unknown",
+        "aperture": 0.0,
+        "autoIris": 0,
+        "model": "UNK",
+        "id": "UNKXX"
+    },
+    {
+        "seq": 54,
+        "f": 8.0,
+        "timestamp": 1302111641,
+        "make": "Fujinon",
+        "aperture": 1.4,
+        "autoIris": 1,
+        "model": "HF8B-SND4-1",
+        "id": "F08AI"
+    },
+    {
+        "seq": 55,
+        "f": 16.0,
+        "timestamp": 1302111641,
+        "make": "Fujinon",
+        "aperture": 1.8,
+        "autoIris": 1,
+        "model": "HF16B-SND4-1",
+        "id": "F16AI"
+    },
+    {
+        "seq": 56,
+        "f": 35.0,
+        "timestamp": 1302111641,
+        "make": "Fujinon",
+        "aperture": 2.0,
+        "autoIris": 1,
+        "model": "HF35B-SND4-1",
+        "id": "F35AI"
+    },
+    {
+        "seq": 57,
+        "f": 12.5,
+        "timestamp": 1302111641,
+        "make": "Rainbow",
+        "aperture": 1.8,
+        "autoIris": 0,
+        "model": "RFIX12.5",
+        "id": "R12MI"
+    },
+    {
+        "seq": 58,
+        "f": 25.0,
+        "timestamp": 1302111641,
+        "make": "Rainbow",
+        "aperture": 2.0,
+        "autoIris": 0,
+        "model": "RFIX25",
+        "id": "R25MI"
+    },
+    {
+        "seq": 59,
+        "f": 12.0,
+        "timestamp": 1302111641,
+        "make": "Computar",
+        "aperture": 2.0,
+        "autoIris": 0,
+        "model": "CFIX12",
+        "id": "C12MI"
+    },
+    {
+        "seq": 60,
+        "f": 6.0,
+        "timestamp": 1302111641,
+        "make": "Rainbow",
+        "aperture": 1.2,
+        "autoIris": 0,
+        "model": "H6-1.2",
+        "id": "R06MI"
+    },
+    {
+        "seq": 61,
+        "f": 9.0,
+        "timestamp": 1302111641,
+        "make": "Fujinon",
+        "aperture": 1.4,
+        "autoIris": 0,
+        "model": "HF9A-2",
+        "id": "F09MI"
+    },
+    {
+        "seq": 62,
+        "f": 12.5,
+        "timestamp": 1302111641,
+        "make": "Rainbow",
+        "aperture": 1.4,
+        "autoIris": 1,
+        "model": "H12.5",
+        "id": "R12AI"
+    },
+    {
+        "seq": 11,
+        "f": 16.0,
+        "timestamp": 1302111641,
+        "make": "Fujinon",
+        "aperture": 1.4,
+        "autoIris": 0,
+        "model": "HF16A-1",
+        "id": "F16MI"
+    },
+    {
+        "seq": 12,
+        "f": 35.0,
+        "timestamp": 1302111641,
+        "make": "Fujinon",
+        "aperture": 1.4,
+        "autoIris": 0,
+        "model": "HF35A",
+        "id": "F35MI"
+    },
+    {
+        "seq": 13,
+        "f": 50.0,
+        "timestamp": 1302111641,
+        "make": "Computar",
+        "aperture": 0.0,
+        "autoIris": 0,
+        "model": "unk",
+        "id": "C50MI"
+    },
+    {
+        "seq": 14,
+        "f": 8.0,
+        "timestamp": 1302111641,
+        "make": "fujinon",
+        "aperture": 1.0,
+        "autoIris": 0,
+        "model": "",
+        "id": "FOV0"
+    },
+    {
+        "seq": 15,
+        "f": 0.0,
+        "timestamp": 1302111641,
+        "make": "unknown",
+        "aperture": 0.0,
+        "autoIris": 0,
+        "model": "unknown",
+        "id": "BILL"
+    },
+    {
+        "seq": 16,
+        "f": 0.0,
+        "timestamp": 1302111641,
+        "make": "John",
+        "aperture": 0.0,
+        "autoIris": 0,
+        "model": "TestL",
+        "id": "TESTL"
+    },
+    {
+        "seq": 17,
+        "f": 12.5,
+        "timestamp": 1302111641,
+        "make": "Fujinon",
+        "aperture": 1.4,
+        "autoIris": 0,
+        "model": "CF12.5A",
+        "id": "F12MI"
+    },
+    {
+        "seq": 18,
+        "f": 9.0,
+        "timestamp": 1302111641,
+        "make": "Fujinon",
+        "aperture": 1.4,
+        "autoIris": 0,
+        "model": "HF9HA-2",
+        "id": "F09M2"
+    },
+    {
+        "seq": 19,
+        "f": 6.0,
+        "timestamp": 1302111641,
+        "make": "Cosmicar",
+        "aperture": 1.2,
+        "autoIris": 0,
+        "model": "C60607",
+        "id": "C06MI"
+    },
+    {
+        "seq": 20,
+        "f": 6.0,
+        "timestamp": 1302111641,
+        "make": "Fujinon",
+        "aperture": 0.0,
+        "autoIris": 0,
+        "model": "DF6HA-1",
+        "id": "F06MI"
+    },
+    {
+        "seq": 21,
+        "f": 16.0,
+        "timestamp": 1302111641,
+        "make": "Rainbow",
+        "aperture": 1.4,
+        "autoIris": 0,
+        "model": "S16MM",
+        "id": "R16MI"
+    },
+    {
+        "seq": 22,
+        "f": 50.0,
+        "timestamp": 1302111641,
+        "make": "Rainbow",
+        "aperture": 1.8,
+        "autoIris": 0,
+        "model": "S50MM",
+        "id": "R50MI"
+    },
+    {
+        "seq": 23,
+        "f": 25.0,
+        "timestamp": 1302111641,
+        "make": "Rainbow",
+        "aperture": 1.4,
+        "autoIris": 0,
+        "model": "G25MM",
+        "id": "G25WI"
+    },
+    {
+        "seq": 24,
+        "f": 75.0,
+        "timestamp": 1302111641,
+        "make": "Rainbow",
+        "aperture": 1.8,
+        "autoIris": 0,
+        "model": "G75MM",
+        "id": "G75WI"
+    },
+    {
+        "seq": 25,
+        "f": 9.0,
+        "timestamp": 1302111641,
+        "make": "Fujinon",
+        "aperture": 1.4,
+        "autoIris": 0,
+        "model": "HF9HA-1B",
+        "id": "F09MN"
+    },
+    {
+        "seq": 26,
+        "f": 0.0,
+        "timestamp": 1302111641,
+        "make": "olympus",
+        "aperture": 0.0,
+        "autoIris": 0,
+        "model": "C4040",
+        "id": "C4040"
+    },
+    {
+        "seq": 27,
+        "f": 12.5,
+        "timestamp": 1302111641,
+        "make": "Fujinon",
+        "aperture": 1.4,
+        "autoIris": 0,
+        "model": "HF12.5HA-1",
+        "id": "F12MN"
+    },
+    {
+        "seq": 28,
+        "f": 25.0,
+        "timestamp": 1302111641,
+        "make": "Fujinon",
+        "aperture": 1.4,
+        "autoIris": 0,
+        "model": "HF25HA-1B",
+        "id": "F25MN"
+    },
+    {
+        "seq": 29,
+        "f": 3.7,
+        "timestamp": 1302111641,
+        "make": "Cosmicar",
+        "aperture": 1.6,
+        "autoIris": 0,
+        "model": "C60305",
+        "id": "C37MI"
+    },
+    {
+        "seq": 30,
+        "f": 4.5,
+        "timestamp": 1302111641,
+        "make": "Kowa",
+        "aperture": 1.4,
+        "autoIris": 0,
+        "model": "LM5NCL",
+        "id": "K45MI"
+    },
+    {
+        "seq": 31,
+        "f": 8.0,
+        "timestamp": 1302111641,
+        "make": "Rainbow",
+        "aperture": 0.0,
+        "autoIris": 0,
+        "model": "unk",
+        "id": "R08MI"
+    },
+    {
+        "seq": 32,
+        "f": 4.8,
+        "timestamp": 1302111641,
+        "make": "Cosmicar/Computar",
+        "aperture": 0.0,
+        "autoIris": 0,
+        "model": "unk",
+        "id": "C048"
+    }
+]

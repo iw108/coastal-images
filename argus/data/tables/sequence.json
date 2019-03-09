@@ -1,0 +1,31 @@
+[
+    {
+        "eurowave": 734,
+        "eurodata": 4148,
+        "seq": 0,
+        "usedGCP": 42539,
+        "site": 118,
+        "keywords": 48,
+        "station": 146,
+        "lensModel": 62,
+        "cameraModel": 37,
+        "euromorph": 0,
+        "gcp": 5462,
+        "camera": 419,
+        "template": 1348761512,
+        "baseUsedGCP": 16404,
+        "eurointertidal": 63,
+        "euromet": 66,
+        "vettedBwEpochs": 0,
+        "autoGeom": 1348761325,
+        "IP": 39,
+        "UTM": 0,
+        "dbdefs": 0,
+        "usedTemplate": 1152285309,
+        "eurotide": 494,
+        "baseGeometry": 1345124896,
+        "geometry": 20144,
+        "eurofielddata": 65,
+        "eurobuoy": 0
+    }
+]
