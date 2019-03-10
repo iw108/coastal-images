@@ -29,11 +29,11 @@ class Site(Base):
     station = relationship("Station")
 
     def __repr__(self):
-        return f"< Site {self.site_name}>"
+        return f"<Site {self.name}>"
 
     @property
     def origin_as_array(self):
-        return np.array([lat, lon, elev])
+        return np.array([self.lat, self.lon, self.elev])
 
 
 class Station(Base):
@@ -52,7 +52,7 @@ class Station(Base):
     camera = relationship("Camera")
 
     def __repr__(self):
-        return f"< Station {self.name}>"
+        return f"<Station {self.name}>"
 
 
 class Camera(Base):
@@ -74,13 +74,15 @@ class Camera(Base):
     coord_x  = Column(Float)
     coord_y  = Column(Float)
     coord_z  = Column(Float)
+    time_start = Column(DateTime)
+    time_end = Column(DateTime)
 
     # relationships
     station_id = Column(String(10), ForeignKey('station.id'))
     geometry = relationship("Geometry")
 
     def __repr__(self):
-        return f"< Camera {self.id}>"
+        return f"<Camera {self.id}>"
 
     @property
     def position(self):
@@ -96,7 +98,7 @@ class Camera(Base):
     @property
     def camera_matrix(self):
         return np.array([
-            [self.focal_point_horizontal, 0, self.principal_point_horizontal],
+            [self.focal_point_horizontal, self.skewness, self.principal_point_horizontal],
             [0, self.focal_point_vertical, self.principal_point_vertical],
             [0, 0, 1]
             ])
@@ -115,7 +117,7 @@ class Geometry(Base):
 
 
     def __repr__(self):
-        return f"< Geometry {self.id}: {self.time_valid.strftime('%Y-%m-%d %H:%M')}"
+        return f"<Geometry {self.camera_id}: {self.time_valid.strftime('%Y-%m-%d %H:%M')}>"
 
 
 class Gcp(Base):
@@ -135,7 +137,7 @@ class Gcp(Base):
     site_id = Column(String(10), ForeignKey('site.id'))
 
     def __repr__(self):
-        return f"< GCP {self.id}>"
+        return f"<GCP {self.id}>"
 
 
 class Used_gcp(Base):
@@ -151,4 +153,4 @@ class Used_gcp(Base):
     gcp_id = Column(String(10), ForeignKey('gcp.id'))
 
     def __repr__(self):
-        return f"< Used GCP {self.id}>"
+        return f"<Used GCP {self.gcp_id}>"

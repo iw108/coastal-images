@@ -104,4 +104,10 @@ FIELD_MAPPING = {
         }
 }
 
-LOCAL_TABLES = FIELD_MAPPING.keys()
+
+LOCAL_TABLES = list(FIELD_MAPPING.keys())
+
+
+TABLE_MAPPING = {
+    'usedGCP': 'used_gcp'
+}
