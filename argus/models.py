@@ -26,7 +26,7 @@ class Site(Base):
     coordinate_rotation = Column(Float)
 
     # relationships
-    station = relationship("Station")
+    station = relationship("Station", back_populates="site", lazy='dynamic')
 
     def __repr__(self):
         return f"<Site {self.name}>"
@@ -49,7 +49,8 @@ class Station(Base):
 
     # relationships
     site_id = Column(String(10), ForeignKey('site.id'))
-    camera = relationship("Camera")
+    site = relationship("Site", back_populates="station")
+    camera = relationship("Camera", back_populates="station", lazy='dynamic')
 
     def __repr__(self):
         return f"<Station {self.name}>"
@@ -79,7 +80,8 @@ class Camera(Base):
 
     # relationships
     station_id = Column(String(10), ForeignKey('station.id'))
-    geometry = relationship("Geometry")
+    station = relationship("Station", back_populates="camera")
+    geometry = relationship("Geometry", lazy='dynamic')
 
     def __repr__(self):
         return f"<Camera {self.id}>"

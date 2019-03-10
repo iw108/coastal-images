@@ -8,7 +8,6 @@ import requests
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from .core import load_table, get_table_model
 from .settings import *
 from .models import Base
 
@@ -173,7 +172,7 @@ def create_db():
 
         new_table_name = TABLE_MAPPING.get(table_name, None)
         table_name = new_table_name if new_table_name else table_name
-        model = get_table_model(models.Base, table_name)
+        model = get_table_model(Base, table_name)
 
         all_entries += [model(**item) for item in table]
 
