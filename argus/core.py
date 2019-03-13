@@ -149,6 +149,18 @@ def get_local_tables():
     return [re.sub(r".json$", "", file).lower() for file in os.listdir(TABLE_DIR)]
 
 
+def obj_to_dict(obj):
+    output = obj.__dict__
+    output.pop('_sa_instance_state')
+    return output
+
+
+def create_session():
+    engine = create_engine(DATABASE_URL, echo=False)
+    Session = sessionmaker(bind=engine)
+    return Session()
+
+
 def create_db():
 
     all_entries = []

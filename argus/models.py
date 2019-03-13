@@ -3,7 +3,10 @@ import numpy as np
 
 from sqlalchemy import create_engine, Column, Float, Integer, String, DateTime, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from sqlalchemy.ext.hybrid import hybrid_property
+from sqlalchemy.orm import relationship, column_property
+from sqlalchemy import select, func
+from sqlalchemy.orm import query_expression
 
 
 Base = declarative_base()
@@ -26,12 +29,13 @@ class Site(Base):
     coordinate_rotation = Column(Float)
 
     # relationships
-    station = relationship("Station", back_populates="site", lazy='dynamic')
+    station = relationship("Station", back_populates="site")
+    gcp = relationship("Gcp")
 
     def __repr__(self):
         return f"<Site {self.name}>"
 
-    @property
+    @hybrid_property
     def origin_as_array(self):
         return np.array([self.lat, self.lon, self.elev])
 
@@ -50,7 +54,7 @@ class Station(Base):
     # relationships
     site_id = Column(String(10), ForeignKey('site.id'))
     site = relationship("Site", back_populates="station")
-    camera = relationship("Camera", back_populates="station", lazy='dynamic')
+    camera = relationship("Camera", back_populates="station")
 
     def __repr__(self):
         return f"<Station {self.name}>"
@@ -86,41 +90,24 @@ class Camera(Base):
     def __repr__(self):
         return f"<Camera {self.id}>"
 
-    @property
+    @hybrid_property
     def position(self):
         return np.array([self.coord_x, self.coord_y, self.coord_z])
 
-    @property
+    @hybrid_property
     def dist_coefs_for_cv2(self):
         return np.array([
             self.radial_dist_coef_first, self.radial_dist_coef_second,
             self.radial_dist_coef_third, self.radial_dist_coef_fourth
             ])
 
-    @property
+    @hybrid_property
     def camera_matrix(self):
         return np.array([
             [self.focal_point_horizontal, self.skewness, self.principal_point_horizontal],
             [0, self.focal_point_vertical, self.principal_point_vertical],
             [0, 0, 1]
             ])
-
-
-class Geometry(Base):
-
-    __tablename__ = 'geometry'
-
-    id = Column(Integer, primary_key=True)
-    time_valid = Column(DateTime)
-
-    # relationships
-    camera_id = Column(String(10), ForeignKey('camera.id'))
-    used_gcp = relationship('Used_gcp', cascade="all, delete-orphan")
-
-
-    def __repr__(self):
-        return f"<Geometry {self.camera_id}: {self.time_valid.strftime('%Y-%m-%d %H:%M')}>"
-
 
 class Gcp(Base):
 
@@ -142,7 +129,7 @@ class Gcp(Base):
         return f"<GCP {self.id}>"
 
 
-class Used_gcp(Base):
+class UsedGcp(Base):
 
     __tablename__ = 'used_gcp'
 
@@ -154,5 +141,27 @@ class Used_gcp(Base):
     geometry_id = Column(Integer, ForeignKey('geometry.id'))
     gcp_id = Column(String(10), ForeignKey('gcp.id'))
 
+
     def __repr__(self):
         return f"<Used GCP {self.gcp_id}>"
+
+
+class Geometry(Base):
+
+    __tablename__ = 'geometry'
+
+    id = Column(Integer, primary_key=True)
+    time_valid = Column(DateTime)
+
+    # relationships
+    camera_id = Column(String(10), ForeignKey('camera.id'))
+
+    gcp_count = column_property(
+        select([func.count(UsedGcp.pk)]).\
+            where(UsedGcp.geometry_id==id)
+        )
+
+    expr = query_expression()
+
+    def __repr__(self):
+        return f"<Geometry {self.camera_id}: {self.time_valid.strftime('%Y-%m-%d %H:%M')}>"
