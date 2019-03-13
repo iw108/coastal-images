@@ -1,12 +1,10 @@
 
 import numpy as np
 
-from sqlalchemy import create_engine, Column, Float, Integer, String, DateTime, ForeignKey
+from sqlalchemy import select, func, create_engine, Column, Float, Integer, String, DateTime, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.orm import relationship, column_property
-from sqlalchemy import select, func
-from sqlalchemy.orm import query_expression
 
 
 Base = declarative_base()
@@ -27,10 +25,6 @@ class Site(Base):
     elev = Column(Float)
     deg_from_north = Column(Float)
     coordinate_rotation = Column(Float)
-
-    # relationships
-    station = relationship("Station", back_populates="site")
-    gcp = relationship("Gcp")
 
     def __repr__(self):
         return f"<Site {self.name}>"
@@ -53,8 +47,7 @@ class Station(Base):
 
     # relationships
     site_id = Column(String(10), ForeignKey('site.id'))
-    site = relationship("Site", back_populates="station")
-    camera = relationship("Camera", back_populates="station")
+    site = relationship("Site")
 
     def __repr__(self):
         return f"<Station {self.name}>"
@@ -84,7 +77,7 @@ class Camera(Base):
 
     # relationships
     station_id = Column(String(10), ForeignKey('station.id'))
-    station = relationship("Station", back_populates="camera")
+    station = relationship("Station")
     geometry = relationship("Geometry", lazy='dynamic')
 
     def __repr__(self):
@@ -125,6 +118,10 @@ class Gcp(Base):
     #relationships
     site_id = Column(String(10), ForeignKey('site.id'))
 
+    @hybrid_property
+    def coords(self):
+        return np.array([self.coord_x, self.coord_y, self.coord_z])
+
     def __repr__(self):
         return f"<GCP {self.id}>"
 
@@ -141,6 +138,9 @@ class UsedGcp(Base):
     geometry_id = Column(Integer, ForeignKey('geometry.id'))
     gcp_id = Column(String(10), ForeignKey('gcp.id'))
 
+    @hybrid_property
+    def coords(self):
+        return np.array([self.image_coord_horizontal, self.image_coord_verical])
 
     def __repr__(self):
         return f"<Used GCP {self.gcp_id}>"
@@ -160,8 +160,6 @@ class Geometry(Base):
         select([func.count(UsedGcp.pk)]).\
             where(UsedGcp.geometry_id==id)
         )
-
-    expr = query_expression()
 
     def __repr__(self):
         return f"<Geometry {self.camera_id}: {self.time_valid.strftime('%Y-%m-%d %H:%M')}>"

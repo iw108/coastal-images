@@ -21,6 +21,7 @@ camera = session.query(Camera).filter_by(id=camera_id).first()
 geometries = camera.geometry.filter(Geometry.gcp_count > 5)\
              .order_by(Geometry.time_valid).all()
 
+
 df = pd.DataFrame([obj_to_dict(geom) for geom in geometries])\
      .set_index('id').drop(columns=['camera_id'])
 df['time_elapsed'] = abs(df['time_valid'] - time_start)
