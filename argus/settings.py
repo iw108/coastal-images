@@ -108,6 +108,11 @@ FIELD_MAPPING = {
 LOCAL_TABLES = list(FIELD_MAPPING.keys())
 
 
+FRAME_DIMENSIONS = [
+    [2448, 2048], [1392, 1040], [1024, 768], [640, 480]
+]
+
+
 TABLE_MAPPING = {
     'usedGCP': 'used_gcp'
 }

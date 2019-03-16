@@ -6,6 +6,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.orm import relationship, column_property
 
+from .settings import FRAME_DIMENSIONS
+
 
 Base = declarative_base()
 
@@ -90,9 +92,9 @@ class Camera(Base):
     @hybrid_property
     def dist_coefs_for_cv2(self):
         return np.array([
-            self.radial_dist_coef_first, self.radial_dist_coef_second,
-            self.radial_dist_coef_third, self.radial_dist_coef_fourth
-            ])
+            self.radial_dist_coef_first, self.radial_dist_coef_second, 0, 0,
+            self.radial_dist_coef_third, self.radial_dist_coef_fourth, 0, 0,
+        ])
 
     @hybrid_property
     def camera_matrix(self):
@@ -100,7 +102,15 @@ class Camera(Base):
             [self.focal_point_horizontal, self.skewness, self.principal_point_horizontal],
             [0, self.focal_point_vertical, self.principal_point_vertical],
             [0, 0, 1]
-            ])
+        ])
+
+    @property
+    def expected_frame_size(self):
+        approx_frame_dims = [2 * self.focal_length_x, 2 * self.focal_length_y]
+        expected_index = ((np.asarray(FRAME_DIMENSIONS) - approx_frame_dims)**2)/
+                             .sum(axis=1).argmin()
+        return tuple(FRAME_DIMENSIONS[expected_index])
+
 
 class Gcp(Base):
 
