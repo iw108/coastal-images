@@ -12,10 +12,10 @@ class Camera(object):
         self.frame_size = frame_size
 
         self.opt_camera_matrix = cv2.getOptimalNewCameraMatrix(
-            camera_marix, dist_coefs, frame_size, 0, frame_size
+            camera_matrix, dist_coefs, frame_size, 0, frame_size
         )[0]
 
-        self.rotation_matrx = kwargs.get('rotation_matrix', None)
+        self.rotation_matrix = kwargs.get('rotation_matrix', None)
         self.translation_vector = kwargs.get('translation_vector', None)
 
     @property
@@ -25,7 +25,7 @@ class Camera(object):
         ])
 
     @property
-    def princpal_point(self):
+    def principal_point(self):
         return np.array([
             self.opt_camera_matrix[0, 2], self.opt_camera_matrix[1, 2]
         ])
@@ -39,14 +39,16 @@ class Camera(object):
 
     @property
     def is_rectified(self):
-        if self.rotation_matrix and self.translation_vector:
+
+        if (isinstance(self.rotation_matrix, np.ndarray)
+                and isinstance(self.translation_vector, np.ndarray)):
             return True
         return False
 
 
     def undistort_points(self, points):
         undistorted_points = cv2.undistortPoints(
-            uv.reshape(-1, 1, 2), self.opt_camera_matrix, self.dist_coefs,
+            points.reshape(-1, 1, 2), self.opt_camera_matrix, self.dist_coefs,
             P=self.opt_camera_matrix
         )
         return undistorted_points.reshape(points.shape)
@@ -58,11 +60,13 @@ class Camera(object):
 
     def rectify(self, object_points, image_points, distorted=False):
 
-        if distort:
+        if distorted:
             image_points = self.undistort_points(image_points)
 
+        dist_coefs = np.zeros(4)
+
         rotation_vector, self.translation_vector = cv2.solvePnP(
-            world_points, image_points, self.opt_camera_matrix)
+            object_points, image_points, self.opt_camera_matrix, dist_coefs
         )[-2:]
 
         self.rotation_matrix = cv2.Rodrigues(rotation_vector)[0]
@@ -83,12 +87,11 @@ class Camera(object):
 
         # calculate image coordinates
         scaled_object_points = (
-            object_points_camera[:, :-1] / object_points_camera[:, -1]/
-            .reshape(-1, 1)
+            object_points_camera[:, :-1] / object_points_camera[:, -1].reshape(-1, 1)
         )
 
         image_points = (
-            self.focal_lengths * scaled_object_points + self.princpal_point
+            self.focal_lengths * scaled_object_points + self.principal_point
         )
 
         image_points = self._mask_image_points(image_points)
@@ -98,7 +101,7 @@ class Camera(object):
     def _mask_image_points(self, image_points):
 
         mask = (np.isnan(image_points) | (image_points < 0)
-                    | (image_points => np.array(self.frame_size)))
+                    | (image_points >= np.array(self.frame_size)))
 
         return np.ma.masked_array(image_points, mask=mask)
 

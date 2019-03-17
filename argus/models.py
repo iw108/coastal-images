@@ -106,9 +106,12 @@ class Camera(Base):
 
     @property
     def expected_frame_size(self):
-        approx_frame_dims = [2 * self.focal_length_x, 2 * self.focal_length_y]
-        expected_index = ((np.asarray(FRAME_DIMENSIONS) - approx_frame_dims)**2)/
-                             .sum(axis=1).argmin()
+        approx_frame_dims = [
+            2 * self.focal_point_horizontal, 2 * self.focal_point_vertical
+        ]
+
+        expected_index = ((np.asarray(FRAME_DIMENSIONS) - approx_frame_dims)**2)\
+                          .sum(axis=1).argmin()
         return tuple(FRAME_DIMENSIONS[expected_index])
 
 
@@ -129,8 +132,8 @@ class Gcp(Base):
     site_id = Column(String(10), ForeignKey('site.id'))
 
     @hybrid_property
-    def coords(self):
-        return np.array([self.coord_x, self.coord_y, self.coord_z])
+    def object_points(self):
+        return (self.coord_x, self.coord_y, self.coord_z)
 
     def __repr__(self):
         return f"<GCP {self.id}>"
@@ -149,8 +152,8 @@ class UsedGcp(Base):
     gcp_id = Column(String(10), ForeignKey('gcp.id'))
 
     @hybrid_property
-    def coords(self):
-        return np.array([self.image_coord_horizontal, self.image_coord_verical])
+    def image_points(self):
+        return (self.image_coord_horizontal, self.image_coord_vertical)
 
     def __repr__(self):
         return f"<Used GCP {self.gcp_id}>"
