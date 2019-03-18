@@ -11,46 +11,35 @@ from datetime import datetime
 import itertools
 import requests
 
+import cv2
 import numpy as np
 import pandas as pd
 import pytz
 
-
-CATALOG = "http://argus-public.deltares.nl/catalog"
-BASEPATH = "http://argus-public.deltares.nl/sites"
-
-TIMEZONE = 'UTC'
-
-SITE = 'zandmotor'
-TIME_START = datetime(2013, 2, 20)
-TIME_END = datetime(2018, 5, 16)
-
-BASIC_IMAGE_TYPES = ['snap', 'timex', 'min', 'max', 'var']
-
-CAMERA_NUMBERS = list(range(1, 13))
-
+from .settings import IMAGE_BASIC_TYPES, IMAGE_SITES, IMAGE_CATALOG_URL, IMAGE_SITES
 
 def timestamp_from_datetime(date_time):
     return timegm(date_time.timetuple())
 
 
-def get_images(time_start, time_end, **kwargs):
+def get_images(time_start, time_end, parse=True, **kwargs):
+
+    site_info = IMAGE_SITES['zandmotor']
 
     # parse the selected image types
     image_types = kwargs.get('image_types', [])
     if isinstance(image_types, str):
         image_types = [image_types]
     if not (isinstance(image_types, list) and
-            all([image_type in BASIC_IMAGE_TYPES for image_type in image_types])):
+            all([image_type in IMAGE_BASIC_TYPES for image_type in image_types])):
         raise ValueError('image_types must be string or list of strings')
 
     # parse the selected cameras
     cameras = kwargs.get('cameras', [])
-
     if isinstance(cameras, int):
         cameras = [cameras]
     if not (isinstance(cameras, list) and
-            all([camera in CAMERA_NUMBERS for camera in cameras])):
+            all([camera in site_info['cameras'] for camera in cameras])):
         raise ValueError('Camera must be integer or list of integers')
 
 
@@ -89,19 +78,29 @@ def get_images(time_start, time_end, **kwargs):
         if options:
             for item in option_list:
                 parameters.update(item)
-                data += requests.get(CATALOG, parameters).json()['data']
+                data += requests.get(IMAGE_CATALOG_URL, parameters).json()['data']
         else:
-            data += requests.get(CATALOG, parameters).json()['data']
+            data += requests.get(IMAGE_CATALOG_URL, parameters).json()['data']
 
     # clean the output
     data = [item for item in data if item['type'] in BASIC_IMAGE_TYPES]
+
+    if parse:
+        return images_to_pandas(data)
     return data
 
 
 def images_to_pandas(data):
 
     df = pd.DataFrame(data).set_index('epoch')
-    df.index = df.index.map(lambda timestamp: datetime.utcfromtimestamp(timestamp))
+    df.index = df.index.map(
+        lambda timestamp: datetime.utcfromtimestamp(timestamp)
+    )
+
+    # get unique cameras and image types from dataframe
+    cameras = df.camera.unique()
+    image_types = df.type.unique()
+    to_multi_index = True if len(cameras) > 1 else False
 
 
     indices = pd.date_range(
@@ -109,22 +108,40 @@ def images_to_pandas(data):
         freq='30T', tz=pytz.utc
     )
 
-    # Make multicolumn dataframe
-    columns = [(camera, image) for camera
-               in df.camera.unique() for image in df.type.unique()]
 
-    df_images = pd.DataFrame(
-        index=indices, columns=pd.MultiIndex.from_tuples(columns)
-    )
+    # create empty dataframe to fill
+    if not to_multi_index:
+        columns = df.type.unique()
+    else:
+        columns = pd.MultiIndex.from_tuples(
+            [(camera, image) for camera in cameras for image in image_types]
+        )
+    df_images = pd.DataFrame(index=indices, columns=columns)
 
-    # Now fill data frame
+
     for index, row in df.iterrows():
-        time_delta = (df_images.index - pytz.utc.localize(index))\
-                     .abs().total_seconds()
-
-        if delta.min() < 600:
-           df_images.loc[df_images.index[time_delta.idxmin()], (row.camera, row.type)] = row.path
-
+        time_delta = abs((df_images.index - pytz.utc.localize(index)))\
+                         .total_seconds()
+        if time_delta.min() < 600:
+            index = df_images.index[time_delta.argmin()]
+            if to_multi_index:
+                df_images.loc[index, (row.camera, row.type)] = row.path
+            else:
+                df_images.loc[index, row.type] = row.path
     df_images.dropna(axis=0, how='all', inplace=True)
-
     return df_images
+
+
+
+def load_image(url, to_float=True):
+
+    response = urllib.request.urlopen(url)
+
+    image_bytes = np.asarray(bytearray(response.read()), dtype="uint8")
+
+    image = cv2.cvtColor(
+        cv2.imdecode(image_bytes, cv2.IMREAD_COLOR), cv2.COLOR_BGR2RGB
+    )
+    if dtype == 'float':
+        return np.float32(image.astype(float)/255)
+    return image

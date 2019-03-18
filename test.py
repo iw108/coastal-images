@@ -8,7 +8,7 @@ from sqlalchemy.orm import sessionmaker, join
 
 from argus.core import obj_to_dict, create_session
 from argus.models import Camera, Geometry, UsedGcp, Gcp
-from argus.camera import Camera as CameraClass
+from argus.camera import Camera as ArgusCamera
 
 
 session = create_session()
@@ -41,11 +41,11 @@ for used_gcp, gcp in used_gcps:
     object_points.append(gcp.object_points)
 
 
-camera = CameraClass(camera.camera_matrix, camera.dist_coefs_for_cv2,
-                   camera.expected_frame_size)
+ZMXX01C = ArgusCamera(camera.camera_matrix, camera.dist_coefs_for_cv2,
+                     camera.expected_frame_size)
 
-camera.rectify(np.asarray(object_points), np.asarray(image_points))
-
+ZMXX01C.rectify(np.asarray(object_points),
+                np.asarray(image_points))
 
 
 session.close()

@@ -116,3 +116,18 @@ FRAME_DIMENSIONS = [
 TABLE_MAPPING = {
     'usedGCP': 'used_gcp'
 }
+
+
+# for images ....
+
+IMAGE_CATALOG_URL = "http://argus-public.deltares.nl/catalog"
+
+IMAGE_BASE_URL = "http://argus-public.deltares.nl/sites"
+
+IMAGE_BASIC_TYPES = ['snap', 'timex', 'min', 'max', 'var']
+
+IMAGE_SITES = {
+    'zandmotor': {
+        'cameras': list(range(1, 13))
+    }
+}
