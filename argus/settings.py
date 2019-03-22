@@ -69,12 +69,13 @@ FIELD_MAPPING = {
         'pk': 'seq',
         'id': 'id',
         'station_id': 'stationID',
+        'intrinsic_parameters_id': 'IPID',
         'number': 'cameraNumber',
         'coord_x': 'x',
         'coord_y': 'y',
         'coord_z': 'z',
         'time_start': 'timeIN',
-        'time_end': 'timeOUT'
+        'time_end': 'timeOUT',
     },
 
     'geometry': {
@@ -101,6 +102,14 @@ FIELD_MAPPING = {
         'image_coord_vertical': 'V',
         'gcp_id': 'gcpID',
         'geometry_id': 'geometrySequence'
+        },
+
+    'IP': {
+        'pk': 'seq',
+        'id': 'id',
+        'name': 'name',
+        'horizontal_pixels': 'width',
+        'vertical_pixels': 'height'
         }
 }
 
@@ -108,18 +117,13 @@ FIELD_MAPPING = {
 LOCAL_TABLES = list(FIELD_MAPPING.keys())
 
 
-FRAME_DIMENSIONS = [
-    [2448, 2048], [1392, 1040], [1024, 768], [640, 480]
-]
-
-
 TABLE_MAPPING = {
-    'usedGCP': 'used_gcp'
+    'usedGCP': 'used_gcp',
+    'IP': 'intrinsic_parameters'
 }
 
 
 # for images ....
-
 IMAGE_CATALOG_URL = "http://argus-public.deltares.nl/catalog"
 
 IMAGE_BASE_URL = "http://argus-public.deltares.nl/sites"

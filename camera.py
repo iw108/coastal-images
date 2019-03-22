@@ -150,27 +150,81 @@ class Camera:
 
 
 
+
+
+def RegionOfInterest(object):
+
+    def __init__(self, points, image):
+        self.points = points
+        self.image = image
+
+    def extract(self, img):
+
+        corners_int = self.corners.astype(int)
+        frame_size = np.asarray((img.shape[0: 2]))
+
+        col_min, row_min = np.min(corners_int, axis = 0)
+        col_max, row_max = np.max(corners_int, axis = 0)
+
+        col_limits = [max(col_min, 0), min(col_max, frame_size[1])]
+        row_limits = [max(row_min, 0), min(row_max, frame_size[0])]
+
+        image_mask = np.zeros(frame_size).astype(bool)
+        image_mask[row_limits[0]:row_limits[1], col_limits[0]: col_limits[1]] = 1
+
+        roi_size = (row_max - row_min, col_max - col_min)
+        roi_mask = np.zeros(roi_size).astype(bool)
+        roi_mask[row_limits[0] - row_min: row_limits[1] - row_min,
+                          col_limits[0] - col_min: col_limits[1] - col_min] = 1
+        roi_corners = corners_int - [col_min, row_min]
+
+        if len(img.shape) == 3:
+            roi = np.zeros((*roi_size, 3))
+        else:
+            roi = np.zeros(roi_size)
+        roi[roi_mask] = img[image_mask]
+        roi = roi.astype(img.dtype)
+
+        mask = cv2.fillConvexPoly(np.zeros((roi_size)), roi_corners, 4, 1) == 0
+        return roi, mask, roi_corners
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class Regionofinterest:
 
     def __init__(self, corners):
         self.corners = corners
 
 
-    @property
-    def widths(self):
-        return np.max(self.corners, axis = 0) - np.min(self.corners, axis = 0)
-
-
-    @property
-    def minwidth(self):
-        return min(self.widths)
-
-
-    @property
-    def lengths(self):
-        lengths = np.array([np.sqrt(np.sum((self.corners[0] - self.corners[2])**2)),
-                               np.sqrt(np.sum((self.corners[1] - self.corners[3])**2))])
-        return lengths
+    # @property
+    # def widths(self):
+    #     return np.max(self.corners, axis = 0) - np.min(self.corners, axis = 0)
+    #
+    #
+    # @property
+    # def minwidth(self):
+    #     return min(self.widths)
+    #
+    #
+    # @property
+    # def lengths(self):
+    #     lengths = np.array([np.sqrt(np.sum((self.corners[0] - self.corners[2])**2)),
+    #                            np.sqrt(np.sum((self.corners[1] - self.corners[3])**2))])
+    #     return lengths
 
 
     def warpPerspective(self, img, shape = None):
@@ -215,6 +269,14 @@ class Regionofinterest:
 
         mask = cv2.fillConvexPoly(np.zeros((roi_size)), roi_corners, 4, 1) == 0
         return roi, mask, roi_corners
+
+
+
+
+
+
+
+
 
 
 class Image(object):
@@ -279,6 +341,284 @@ class Image(object):
         else:
            return cv2.resize(self._image, shape)
 
+
+    def rotate(self, ang, mode = 'deg', inplace = False):
+        if mode == 'rad':
+            ang *=  np.pi/180
+
+        image = self.image
+        if ang != 0 or ang != 360:
+            M = cv2.getRotationMatrix2D(tuple([dim/ 2 for dim in self.framesize]), ang, 1)
+            image = cv2.warpAffine(image, M, self.framesize)
+
+        if inplace:
+            self._image = image
+            return self
+        else:
+            return image
+
+
+    def color_transfer(self, reference, inplace = False):
+
+        if reference.size != self.nchannels:
+            raise ValueError('Reference array doesnt equal image dimensions')
+
+        channels = []
+        for ref, channel in zip(reference, self.channels):
+            channel += (ref - np.mean(channel))
+            channels.append(channel)
+
+        image = np.dstack(channels).reshape(self.shape)
+        image = self.scale_colors(image, self.colorspace)
+
+        if inplace:
+            self._image = image
+            return self
+        else:
+            return image
+
+
+    def taper(self, method, alpha = 0.2, beta = 0.1, inplace = True):
+        weights = get_taper(method, self.framesize, alpha = alpha, beta = beta)
+        weights = weights.astype(np.float32)
+
+        channels = []
+        for idx, channel in enumerate(self.channels):
+             wm = np.nansum(channel*weights)/np.sum(weights)
+             channels.append(channel * weights + (1 - weights) * wm)
+
+        if idx == 0:
+            channels = channels[0]
+        else:
+            channels = np.dstack(channels)
+
+        image = self.scale_colors(channels, self.colorspace)
+        if inplace:
+            self._image = image
+            return self
+        else:
+            return image
+
+
+    def togray(self, inplace = False):
+
+       if self.colorspace == 'LAB':
+           image = cv2.cvtColor(self._image, cv2.COLOR_LAB2RGB)
+           image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+
+       elif self.colorspace == 'RGB':
+           image = cv2.cvtColor(self._image, cv2.COLOR_RGB2GRAY)
+
+       elif self.colorspace == 'GRAY':
+           image = self.image
+
+       elif self.colorspace == 'UNDEFINED':
+           raise TypeError("Can't convert colorspace to LAB")
+
+
+       if inplace:
+           self._image = image
+           self.colorspace = 'GRAY'
+           return self
+       else:
+           return image
+
+
+
+    def tolab(self, inplace = False):
+
+        if self.colorspace == 'RGB':
+            image = cv2.cvtColor(self._image, cv2.COLOR_RGB2LAB)
+
+        elif self.colorspace == 'LAB':
+            image = self.image
+
+        elif self.colorspace == 'GRAY' or self.colorspace == 'UNDEFINED':
+            raise TypeError("Can't convert colorspace to LAB")
+
+
+        if inplace:
+            self._image = image
+            self.colorspace = 'LAB'
+            return self
+        else:
+            return image
+
+
+
+    def torgb(self, inplace = False):
+
+        if self.colorspace == 'LAB':
+            image = cv2.cvtColor(self._image, cv2.COLOR_LAB2RGB)
+        elif self.colorspace == 'RGB':
+            image = self.image
+        elif self.colorspace == 'GRAY' or self.colorspace == 'UNDEFINED':
+            raise TypeError("Can't convert colorspace to RGB")
+
+        if inplace:
+            self._image = image
+            self.colorspace = 'RGB'
+            return self
+        else:
+            return image
+
+
+
+    def band_pass(self, u = None, v = None, kmin = 0, kmax = np.inf, inplace = False, **kwargs):
+
+        if isinstance(u, np.ndarray):
+            if u.size != self.framesize[1]:
+                raise ValueError('u incorrect shape')
+        else:
+            u = np.arange(self.framesize[1])
+
+
+        if isinstance(v, np.ndarray):
+            if v.size != self.framesize[0]:
+                raise ValueError('v incorrect shape')
+        else:
+            v = np.arange(self.framesize[0])
+
+
+        image = []
+        channels = self.channels
+        for channel in channels:
+            transform = Fourier.transform(u, v, channel, remove_avg = True)
+            if 'Lmin' in kwargs.keys():
+                try:
+                    kmax = 2*np.pi/kwargs['Lmin']
+                except ZeroDivisionError:
+                    kmax = np.inf
+            if 'Lmax' in kwargs.keys():
+                kmin = 2*np.pi/kwargs['Lmax']
+
+            filtered = transform.band_pass(kmax = kmax, kmin = kmin).reverse()
+            image.append(filtered.astype(np.float32))
+
+
+        if len(image) == 1:
+            image = image[0]
+        else:
+            image = np.dstack(image)
+
+        image = self.scale_colors(image, self.colorspace)
+
+        if inplace:
+            self._image = image
+            return self
+        else:
+            return image
+
+
+
+    @staticmethod
+    def _parse_image(image):
+
+        if not image.dtype == np.dtype(np.float32):
+            raise TypeError('Input image should be of type numpy.float32')
+
+        return image
+
+
+    @staticmethod
+    def _parse_colorspace(colorspace):
+
+        if not isinstance(colorspace, str) or not colorspace in _COLORSPACES:
+            raise TypeError("Colorspace must be string from: {}".format(_COLORSPACES))
+
+        return colorspace
+
+
+    @staticmethod
+    def scale_colors(image, colorspace):
+        if colorspace == 'RGB' or colorspace == 'GRAY':
+             image[image < 0] = 0
+             image[image > 1] = 1
+        elif colorspace == 'LAB':
+           channels = [channel.reshape(image.shape[0:2]) for channel in np.dsplit(image, 3)]
+           limits = [(0, 100), (-128, 128), (-128, 128)]
+           for idx, (limit, channel) in enumerate(zip(limits, channels)):
+               channels[idx] = np.clip(channel, *limit)
+           image = np.dstack(channels)
+
+        return image
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Image(object):
+
+
+    def __init__(self, image, colorspace = 'UNDEFINED'):
+
+       self._image = self._parse_image(image)
+       self.colorspace = self._parse_colorspace(colorspace)
+
+
+    @property
+    def mean(self):
+        return np.mean(self._image, axis = (0, 1))
+
+
+    @property
+    def shape(self):
+        return self._image.shape
+
+
+    @property
+    def framesize(self):
+        return self._image.shape[0:2]
+
+
+    @property
+    def nchannels(self):
+        if np.ndim(self._image) == 2:
+            return 1
+        elif np.ndim(self._image) == 3:
+            return 3
+
+
+    @property
+    def channels(self):
+        if self.nchannels == 1:
+            return [self.image]
+        else:
+            return [channel.reshape(self.framesize) for channel in np.dsplit(self._image, 3)]
+
+
+    @property
+    def image(self):
+        return self._image.copy()
+
+
+
+    def blur(self,  kernal = (3, 3), weight = 0, inplace = False):
+        if inplace:
+            self._image = cv2.GaussianBlur(self._image, kernal, weight)
+            return self
+        else:
+            return cv2.GaussianBlur(self._image, kernal, weight)
+
+
+
+    def resize(self, shape, inplace = False):
+        if inplace:
+            self._image = cv2.resize(self._image, shape)
+            return self
+        else:
+           return cv2.resize(self._image, shape)
 
 
     def rotate(self, ang, mode = 'deg', inplace = False):

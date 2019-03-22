@@ -6,7 +6,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.orm import relationship, column_property
 
-from .settings import FRAME_DIMENSIONS
 
 
 Base = declarative_base()
@@ -80,6 +79,8 @@ class Camera(Base):
     # relationships
     station_id = Column(String(10), ForeignKey('station.id'))
     station = relationship("Station")
+    intrinsic_parameters_id = Column(String(10), ForeignKey('intrinsic_parameters.id'))
+    intrinsic_parameters = relationship("IntrinsicParameters")
     geometry = relationship("Geometry", lazy='dynamic')
 
     def __repr__(self):
@@ -104,15 +105,23 @@ class Camera(Base):
             [0, 0, 1]
         ])
 
-    @property
-    def expected_frame_size(self):
-        approx_frame_dims = [
-            2 * self.focal_point_horizontal, 2 * self.focal_point_vertical
-        ]
 
-        expected_index = ((np.asarray(FRAME_DIMENSIONS) - approx_frame_dims)**2)\
-                          .sum(axis=1).argmin()
-        return tuple(FRAME_DIMENSIONS[expected_index])
+class IntrinsicParameters(Base):
+
+    __tablename__ = 'intrinsic_parameters'
+
+    pk = Column(Integer, primary_key=True)
+    id = Column(String)
+    name = Column(String)
+    horizontal_pixels = Column(Integer)
+    vertical_pixels = Column(Integer)
+
+    def __repr__(self):
+        return f"<CameraIP: {self.name}>"
+
+    @hybrid_property
+    def frame_size(self):
+        return (self.horizontal_pixels, self.vertical_pixels)
 
 
 class Gcp(Base):

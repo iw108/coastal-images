@@ -18,47 +18,49 @@ import pytz
 
 from .settings import IMAGE_BASIC_TYPES, IMAGE_SITES, IMAGE_CATALOG_URL, IMAGE_SITES
 
+
 def timestamp_from_datetime(date_time):
     return timegm(date_time.timetuple())
 
 
-def get_images(time_start, time_end, parse=True, **kwargs):
-
-    site_info = IMAGE_SITES['zandmotor']
-
-    # parse the selected image types
-    image_types = kwargs.get('image_types', [])
+def parse_image_types(image_types):
     if isinstance(image_types, str):
         image_types = [image_types]
     if not (isinstance(image_types, list) and
             all([image_type in IMAGE_BASIC_TYPES for image_type in image_types])):
         raise ValueError('image_types must be string or list of strings')
+    return image_types
+
+
+def parse_camera_types(site, cameras):
+
+    available_cameras = IMAGE_SITES[site]['cameras']
 
     # parse the selected cameras
-    cameras = kwargs.get('cameras', [])
     if isinstance(cameras, int):
         cameras = [cameras]
     if not (isinstance(cameras, list) and
-            all([camera in site_info['cameras'] for camera in cameras])):
+            all([camera in available_cameras for camera in cameras])):
         raise ValueError('Camera must be integer or list of integers')
+    return cameras
 
 
-    # convert datetime to timestamps
-    time_start = timestamp_from_datetime(time_start)
-    time_end = timestamp_from_datetime(time_end)
-    time_steps = np.linspace(
-        time_start, time_end, max(2, int((time_end - time_start)/ (30 * 24 * 3600)))
-    ).astype(int)
+def get_images(time_start, time_end, parse=True, **kwargs):
 
-    parameters = {
-        'site': 'zandmotor',
-        'output':'json'
-    }
+    site = 'zandmotor'
 
-    options = {
-        'type': image_types,
-        'camera': cameras
-    }
+    # parse the selected image types
+    image_types = kwargs.get('image_types', [])
+    if image_types:
+        image_types = parse_image_types(image_types)
+
+    # parse selected cameras
+    cameras = kwargs.get('cameras', [])
+    if cameras:
+        cameras = parse_camera_types(site, cameras)
+
+    # contruct options
+    options = {'type': image_types, 'camera': cameras}
     options = {key: value for key, value in options.items() if value}
     if options:
         keys = sorted(options.keys())
@@ -69,6 +71,20 @@ def get_images(time_start, time_end, parse=True, **kwargs):
                 {key: combination[index] for index, key in enumerate(keys)}
             )
 
+    # convert datetime to timestamps
+    time_start = timestamp_from_datetime(time_start)
+    time_end = timestamp_from_datetime(time_end)
+
+    # split timestamps into intervals
+    time_steps = np.linspace(
+        time_start, time_end, max(2, int((time_end - time_start)/ (30 * 24 * 3600)))
+    ).astype(int)
+
+
+    parameters = {
+        'site': 'zandmotor',
+        'output':'json'
+    }
     data = []
     for start_interval, end_interval in zip(time_steps[:-1], time_steps[1:]):
         parameters.update({
@@ -83,14 +99,14 @@ def get_images(time_start, time_end, parse=True, **kwargs):
             data += requests.get(IMAGE_CATALOG_URL, parameters).json()['data']
 
     # clean the output
-    data = [item for item in data if item['type'] in BASIC_IMAGE_TYPES]
+    data = [item for item in data if item['type'] in IMAGE_BASIC_TYPES]
 
     if parse:
-        return images_to_pandas(data)
+        return image_request_to_pandas(data)
     return data
 
 
-def images_to_pandas(data):
+def image_request_to_pandas(data):
 
     df = pd.DataFrame(data).set_index('epoch')
     df.index = df.index.map(
@@ -107,7 +123,6 @@ def images_to_pandas(data):
         start=df.index.min().floor('1H'), end=df.index.max().ceil('1H'),
         freq='30T', tz=pytz.utc
     )
-
 
     # create empty dataframe to fill
     if not to_multi_index:
@@ -130,7 +145,6 @@ def images_to_pandas(data):
                 df_images.loc[index, row.type] = row.path
     df_images.dropna(axis=0, how='all', inplace=True)
     return df_images
-
 
 
 def load_image(url, to_float=True):

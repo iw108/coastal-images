@@ -87,6 +87,12 @@ class ProcessTables(object):
         store = {new_key: used_gcp[old_key] for new_key, old_key in key_mapping.items()}
         return store
 
+    @staticmethod
+    def clean_ip(site):
+        key_mapping = FIELD_MAPPING['IP']
+        store = {new_key: site[old_key] for new_key, old_key in key_mapping.items()}
+        return store
+
     @classmethod
     def get_clean_functions(cls):
         functions = {}
@@ -109,6 +115,10 @@ process_tables = ProcessTables()
 
 
 def get_table_model(cls, table_name):
+
+    if table_name in TABLE_MAPPING.keys():
+        table_name = TABLE_MAPPING[table_name]
+
     for model_class in cls._decl_class_registry.values():
         if (hasattr(model_class, '__table__')
                and model_class.__table__.fullname == table_name):

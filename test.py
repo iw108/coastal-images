@@ -1,5 +1,5 @@
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import numpy as np
 import pandas as pd
@@ -9,6 +9,7 @@ from sqlalchemy.orm import sessionmaker, join
 from argus.core import obj_to_dict, create_session
 from argus.models import Camera, Geometry, UsedGcp, Gcp
 from argus.camera import Camera as ArgusCamera
+from argus.images import get_images
 
 
 session = create_session()
@@ -42,10 +43,15 @@ for used_gcp, gcp in used_gcps:
 
 
 ZMXX01C = ArgusCamera(camera.camera_matrix, camera.dist_coefs_for_cv2,
-                     camera.expected_frame_size)
+                     camera.intrinsic_parameters.frame_size)
 
 ZMXX01C.rectify(np.asarray(object_points),
                 np.asarray(image_points))
 
-
 session.close()
+
+
+df_images = get_images(
+    time_start=time_start, time_end=time_start + timedelta(days=1),
+    cameras=1, image_types='snap'
+)
