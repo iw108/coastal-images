@@ -108,7 +108,23 @@ class ProcessTables(object):
         functions = cls.get_clean_functions()
         if table_name.lower() not in functions.keys():
             return table
-        return [functions[table_name.lower()].__func__(item) for item in table]
+
+        cleaned_table = [functions[table_name.lower()].__func__(item) for item in table]
+
+        # work around to account for dupiclate primary keys
+        if table_name == 'usedgcp':
+            all_pks = list(map(lambda item: item['pk'], cleaned_table))
+            max_pk = max(all_pks)
+            duplicate_pks = set([pk for pk in all_pks if all_pks.count(pk) > 1])
+
+            for duplicate_pk in duplicate_pks:
+                duplicate_entries = [
+                    (index, item) for index, item in enumerate(cleaned_table) if item['pk'] == duplicate_pk
+                ]
+                for index, item in duplicate_entries[1:]:
+                    max_pk += 1
+                    cleaned_table[index]['pk'] = max_pk
+        return cleaned_table
 
 
 process_tables = ProcessTables()
@@ -173,24 +189,14 @@ def create_session():
 
 def create_db():
 
+    # remove existing database if it exists
+    if os.path.exists(settings.DATABASE_PATH):
+        os.remove(settings.DATABASE_PATH)
+
     all_entries = []
     for table_name in LOCAL_TABLES:
 
         table = load_table(table_name)
-
-        # work around to account for dupiclate primary keys
-        if table_name == 'usedGCP':
-            all_pks = list(map(lambda item: item['pk'], table))
-            max_pk = max(all_pks)
-            duplicate_pks = set([pk for pk in all_pks if all_pks.count(pk) > 1])
-
-            for duplicate_pk in duplicate_pks:
-                duplicate_entries = [
-                    (index, item) for index, item in enumerate(table) if item['pk'] == duplicate_pk
-                ]
-                for index, item in duplicate_entries[1:]:
-                    max_pk += 1
-                    table[index]['pk'] = max_pk
 
         new_table_name = TABLE_MAPPING.get(table_name, None)
         table_name = new_table_name if new_table_name else table_name
