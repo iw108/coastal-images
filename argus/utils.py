@@ -16,4 +16,4 @@ class PerspectiveTransform(object):
 
     @classmethod
     def perspective_transform(cls, points, warped_points, image):
-        return cls(points, warped_points).apply_perspective_transform
+        return cls(points, warped_points).apply_perspective_transform(image)

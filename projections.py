@@ -5,57 +5,48 @@ Created on Fri Apr 27 07:36:00 2018
 @author: isaacwilliams
 """
 
-import pyproj
-import numpy as np
 import ephem
+import numpy as np
+import pyproj
 import pytz
-from timezonefinder import TimezoneFinder
 
 
-# x0, y0, rotation, coordsystem
+def parse_timezone(timezone_string):
 
-tzfinder = TimezoneFinder()
+    if not isinstance(timezone_string, str):
+        raise TypeError('Timezone must be a string')
 
+    if not timezone_string in pytz.all_timezones:
+        raise ValueError(f'{timezone_string} not a valid timezone')
 
-
-def pythag_dist(x, y, x0 = 0, y0 = 0):
-    dist = ((np.asarray(x) - x0)**2 + (np.asarray(y) - y0)**2)**0.5
-    return dist
-
-
-
-class Solar:
-
-    _Obs = ephem.Observer()
-
-    def __init__(self, lon, lat, elev = 0, mode = 'deg'):
-
-        if mode == 'deg':
-            lon_rad, lat_rad = map(lambda x: x*np.pi/180, [lon, lat])
-            lon_deg, lat_deg = lon, lat
-        else:
-            lon_deg, lat_deg = map(lambda x: x*180/np.pi, [lon, lat])
-            lon_rad, lat_rad = lon, lat
-
-        self._Obs.lon = lon_rad
-        self._Obs.lat = lat_rad
-        self._Obs.elev = elev
-
-        timezone = tzfinder.timezone_at(lng = lon_deg, lat = lat_deg)
-        self.tz =  pytz.timezone(timezone)
+    return pytz.timezone(timezone_string)
 
 
-    def sun_position(self, date, output = 'rad'):
+class Solar(ephem.Observer):
 
-        self._Obs.date = self._process_input_date(date)
-        position = ephem.Sun(self._Obs)
-        position.compute(self._Obs)
+    def __init__(self, lon, lat, elev=0, timezone='Europe/Amsterdam', in_degrees=True):
 
-        azimuth, altitude = position.az, position.alt
+        self.in_degrees = in_degress
+        self.lon, self.lat = np.deg2rad([lon, lat]) if in_degrees else (lon, lat)
+        self.elev = elev
+        self.tz =  parse_timezone(tz)
 
-        if output == 'deg':
-            azimuth, altitude = map(lambda x: x*180/np.pi, [altitude, azimuth])
 
+    @property
+    def coords(coords):
+        if self.in_dregrees:
+            return np.rad2deg([self.lon, self.lat])
+        return self.lon, self.lat
+
+
+    def sun_position(self, date):
+
+        self.date = self._process_input_date(date)
+        position = ephem.Sun(self)
+        position.compute(self)
+
+        if self.in_degrees:
+            return np.rad2deg([position.az, position.alt])
         return position.az, position.alt
 
 
@@ -64,10 +55,10 @@ class Solar:
         date = date.replace(hour = 0, minute = 0, second = 0)
 
         input_date = self._process_input_date(date)
-        self._Obs.date = input_date
+        self.date = input_date
 
-        sunrise = self._Obs.next_rising(ephem.Sun()).datetime()
-        sunset = self._Obs.next_setting(ephem.Sun()).datetime()
+        sunrise = self.next_rising(ephem.Sun()).datetime()
+        sunset = self.next_setting(ephem.Sun()).datetime()
 
         return self._process_output_date(sunrise), self._process_output_date(sunset)
 
@@ -83,16 +74,6 @@ class Solar:
             date = self.tz.localize(date)
 
         return date.astimezone(pytz.utc)
-
-
-
-def rotate(phi, xy):
-
-    rotMatrix = np.array([[np.cos(phi), np.sin(phi)],
-                         [-np.sin(phi), np.cos(phi)]])
-    xy = np.dot(rotMatrix, xy.T).T
-
-    return xy
 
 
 
