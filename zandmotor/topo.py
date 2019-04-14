@@ -88,10 +88,10 @@ class GPS(Lidar):
 
 
     @staticmethod
-    def interpolate_data(lon, lat, elev, lon_lims=(7e4, 7.5e4), lat_lims=(4.5e5, 4.55e4), lon_spacing=2, lat_spacing=2):
+    def interpolate_data(lon, lat, elev, lon_lims=(7e4, 7.5e4), lat_lims=(4.5e5, 4.55e5), lon_spacing=2, lat_spacing=2):
 
-        lon_array = np.arange(*xlims, dx)
-        lat_array = np.aranage(*ylims, dy)
+        lon_array = np.arange(*lon_lims, lon_spacing)
+        lat_array = np.arange(*lat_lims, lat_spacing)
 
         xx, yy  = np.meshgrid(lon_array, lat_array)
         interpolated_elev = griddata((lon, lat), elev, (xx, yy))

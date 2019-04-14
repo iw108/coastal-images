@@ -13,9 +13,16 @@ from .models import Base
 
 
 def get_table(table_name):
-    if table_name not in AVAILABLE_TABLES:
+    if not table_name in AVAILABLE_TABLES:
         raise ValueError("Table does not exist")
     return requests.get(('/').join((API, table_name))).json()
+
+
+def extract_table(table_name):
+    table = get_table(table_name)
+    file_path = os.path.join(TABLE_DIR, f"{table_name}.json")
+    with open(file_path, 'w') as file:
+        json.dump(table, file, indent=4)
 
 
 class ProcessTables(object):
@@ -150,25 +157,6 @@ def load_table(table_name, process=True):
             table = json.load(file)
         return process_tables.clean_table(table_name, table)
     return None
-
-
-def extract_table(table_name):
-
-    if not table_name in AVAILABLE_TABLES:
-        return
-
-    try:
-        table = get_table(table_name)
-        save_table = True
-    except Exception as e:
-        print('Could not get table')
-        save_table = False
-        pass
-
-    if save_table:
-        file_path = os.path.join(TABLE_DIR, f"{table_name}.json")
-        with open(file_path, 'w') as file:
-            json.dump(table, file, indent=4)
 
 
 def get_local_tables():

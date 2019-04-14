@@ -9,6 +9,7 @@ Created on Thu Jun  7 10:47:14 2018
 from calendar import timegm
 from datetime import datetime
 import itertools
+import urllib
 import requests
 
 import cv2
@@ -33,6 +34,9 @@ def parse_image_types(image_types):
 
 
 def parse_camera_types(site, cameras):
+
+    if not IMAGE_SITES.get(site, None):
+        raise ValueError('Site does not exist')
 
     available_cameras = IMAGE_SITES[site]['cameras']
 
@@ -156,6 +160,6 @@ def load_image(url, to_float=True):
     image = cv2.cvtColor(
         cv2.imdecode(image_bytes, cv2.IMREAD_COLOR), cv2.COLOR_BGR2RGB
     )
-    if dtype == 'float':
+    if to_float:
         return np.float32(image.astype(float)/255)
     return image

@@ -2,7 +2,7 @@
 import ephem
 import numpy as np
 import pyproj
-from pytz import timezone as pytz_timezone, utc as pytz_utz, all_timezones
+from pytz import timezone as pytz_timezone, utc as pytz_utc, all_timezones
 
 
 class Rotation(object):
@@ -55,15 +55,15 @@ class Solar(ephem.Observer):
 
     def __init__(self, lon, lat, elev=0, timezone='Europe/Amsterdam', in_degrees=True):
 
-        self.in_degrees = in_degress
+        self.in_degrees = in_degrees
         self.lon, self.lat = np.deg2rad([lon, lat]) if in_degrees else (lon, lat)
         self.elev = elev
         self.timezone =  parse_timezone(timezone)
 
 
     @property
-    def coords(coords):
-        if self.in_dregrees:
+    def coords(self):
+        if self.in_degrees:
             return np.rad2deg([self.lon, self.lat])
         return self.lon, self.lat
 
@@ -84,7 +84,7 @@ class Solar(ephem.Observer):
         input_datetime = input_datetime.replace(
             hour=0, minute=0, second=0
         )
-        self.date = self.process_input_date(date)
+        self.date = self.process_input_datetime(input_datetime)
 
         sunrise_datetime = self.process_output_datetime(
             self.next_rising(ephem.Sun()).datetime()
