@@ -20,7 +20,6 @@ LIDAR_FILE = ('http://opendap.deltares.nl/thredds/dodsC/'
               'opendap/rijkswaterstaat/kusthoogte/30dz1.nc')
 
 
-
 class Lidar(object):
 
     file_path = LIDAR_FILE
@@ -53,10 +52,10 @@ class Lidar(object):
 
     def load_topo_from_datetime(self, datetime_obj):
 
-        index = self.get_index(datetime_obj)
+        index = self.get_timestamp_index(datetime_obj)
         lon, lat, elev = self.load_topo_from_index(index)
 
-        timestamp = self.timestamps[index]
+        topo_timestamp = self.timestamps[index]
         return lon, lat, elev, topo_timestamp
 
 
@@ -88,7 +87,8 @@ class GPS(Lidar):
 
 
     @staticmethod
-    def interpolate_data(lon, lat, elev, lon_lims=(7e4, 7.5e4), lat_lims=(4.5e5, 4.55e5), lon_spacing=2, lat_spacing=2):
+    def interpolate_data(lon, lat, elev, lon_lims=(7e4, 7.5e4), lat_lims=(4.5e5, 4.55e5),
+                         lon_spacing=2, lat_spacing=2):
 
         lon_array = np.arange(*lon_lims, lon_spacing)
         lat_array = np.arange(*lat_lims, lat_spacing)

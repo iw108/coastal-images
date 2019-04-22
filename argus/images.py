@@ -106,11 +106,11 @@ def get_images(time_start, time_end, parse=True, **kwargs):
     data = [item for item in data if item['type'] in IMAGE_BASIC_TYPES]
 
     if parse:
-        return image_request_to_pandas(data)
+        return _image_request_to_pandas(data)
     return data
 
 
-def image_request_to_pandas(data):
+def _image_request_to_pandas(data):
 
     df = pd.DataFrame(data).set_index('epoch')
     df.index = df.index.map(
@@ -163,3 +163,22 @@ def load_image(url, to_float=True):
     if to_float:
         return np.float32(image.astype(float)/255)
     return image
+
+
+class PerspectiveTransform(object):
+
+    def __init__(self, initial_points, warped_points):
+        self.initial_points = initial_points
+        self.warped_points = warped_points
+
+        self.homography = cv2.getPerspectiveTransform(
+            self.warped_points.astype('float32'),
+            self.initial_points.astype('float32')
+        )
+
+    def apply_perspective_transform(self, image):
+        return cv2.warpPerspective(image, self.homography, self.initial_points)
+
+    @classmethod
+    def perspective_transform(cls, initial_points, warped_points, image):
+        return cls(initial_points, warped_points).apply_perspective_transform(image)

@@ -4,7 +4,7 @@ from calendar import timegm
 import numpy as np
 from pandas import DataFrame
 
-from .utils import parse_datetime, timestamp_to_datetime
+from .utils import parse_datetime, timestamp_to_datetime, open_with_retries
 
 
 METEO_FILE = ("https://zandmotordata.nl/thredds/dodsC/"

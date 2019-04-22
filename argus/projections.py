@@ -18,7 +18,7 @@ class Rotation(object):
 
     #Argus to local
     def local_to_argus(self, coords):
-        coords = self._rotate(coords) - self.origin
+        coords = self._rotate(coords - self.origin) 
         return coords
 
     def argus_to_local(self, coords):
