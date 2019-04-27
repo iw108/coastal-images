@@ -26,6 +26,6 @@ def open_with_retries(file_path, retries=3):
     except OSError as exception:
         if retries > 0:
             print(f"Retrying {file_path}")
-            return open_with_retries(retries=retries - 1)
+            return open_with_retries(file_path, retries=retries - 1)
         else:
             raise OSError(exception)
