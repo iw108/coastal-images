@@ -10,8 +10,7 @@ from sqlalchemy.orm import sessionmaker, join
 from argus.core import obj_to_dict, create_session
 from argus.models import Camera, Geometry, UsedGcp, Gcp
 from argus.camera import Camera as ArgusCamera
-from argus.images import get_images, load_image
-from argus.settings import IMAGE_BASE_URL
+from argus.images import IMAGE_BASE_URL, get_images, load_image
 
 
 session = create_session()

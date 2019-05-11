@@ -17,7 +17,19 @@ import numpy as np
 import pandas as pd
 import pytz
 
-from .settings import IMAGE_BASIC_TYPES, IMAGE_SITES, IMAGE_CATALOG_URL, IMAGE_SITES
+
+
+IMAGE_CATALOG_URL = "http://argus-public.deltares.nl/catalog"
+
+IMAGE_BASE_URL = "http://argus-public.deltares.nl/sites"
+
+IMAGE_BASIC_TYPES = ['snap', 'timex', 'min', 'max', 'var']
+
+IMAGE_SITES = {
+    'zandmotor': {
+        'cameras': list(range(1, 13))
+    }
+}
 
 
 def timestamp_from_datetime(date_time):

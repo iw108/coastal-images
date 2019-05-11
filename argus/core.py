@@ -2,165 +2,147 @@
 from datetime import datetime
 import json
 import os
-import re
+from re import sub as re_sub
 import requests
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from .settings import *
 from .models import Base
+from . import utils
+
+
+API = 'http://argus-public.deltares.nl/db/table'
+
+AVAILABLE_TABLES = (
+    "eurowave",
+    "eurodata",
+    "sequence",
+    "usedGCP",
+    "site",
+    "keywords",
+    "station",
+    "lensModel",
+    "cameraModel",
+    "gcp",
+    "camera",
+    "template",
+    "baseUsedGCP",
+    "eurointertidal",
+    "euromet",
+    "IP",
+    "eurotide",
+    "baseGeometry",
+    "geometry",
+    "eurofielddata",
+)
+
+
+# set up paths
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, 'data')
+
+
+# database info
+DATABASE_PATH = os.path.join(DATA_DIR, 'argus.db')
+DATABASE_URL = f'sqlite:///{DATABASE_PATH}'
+
+# saved tables
+TABLE_DIR = os.path.join(DATA_DIR, 'tables')
+LOCAL_TABLES = tuple(utils.FIELD_MAPPING.keys())
+
 
 
 def get_table(table_name):
+    """ get table from api """
+
     if not table_name in AVAILABLE_TABLES:
         raise ValueError("Table does not exist")
     return requests.get(('/').join((API, table_name))).json()
 
 
 def extract_table(table_name):
+    """ get table from api and save locally """
+
     table = get_table(table_name)
     file_path = os.path.join(TABLE_DIR, f"{table_name}.json")
     with open(file_path, 'w') as file:
         json.dump(table, file, indent=4)
 
 
-class ProcessTables(object):
+def extract_all_tables():
+    """ get all tables from the api and store locally """
 
-    @staticmethod
-    def clean_site(site):
-        key_mapping = FIELD_MAPPING['site']
-        store = {new_key: site[old_key] for new_key, old_key in key_mapping.items()}
-        store['epsg'] = 4826 if not store['epsg'] else store['epsg']
-        if site['coordinateOrigin']:
-           store['lat'], store['lon'], store['elev'] = site['coordinateOrigin'][0]
-        return store
-
-    @staticmethod
-    def clean_station(station):
-        key_mapping = FIELD_MAPPING['station']
-        store = {new_key: station[old_key] for new_key, old_key in key_mapping.items()}
-        store['time_start'] = datetime.utcfromtimestamp(store['time_start'])
-        store['time_end'] = datetime.utcfromtimestamp(store['time_end']) if store['time_end'] else None
-        return store
-
-    @staticmethod
-    def clean_camera(camera):
-        key_mapping = FIELD_MAPPING['camera']
-        store = {new_key: camera[old_key] for new_key, old_key in key_mapping.items()}
-
-        if camera['K']:
-            try:
-                camera_matrix = {
-                    'focal_point_horizontal': abs(camera['K'][0][0]),
-                    'focal_point_vertical': abs(camera['K'][1][1]),
-                    'principal_point_horizontal': abs(camera['K'][2][0]),
-                    'principal_point_vertical': abs(camera['K'][2][1]),
-                    'skewness': abs(camera['K'][1][0])
-                }
-                store.update(camera_matrix)
-            except IndexError:
-                pass
-
-        if camera['Drad']:
-            k1, k2, k3, k4 = camera['Drad'][0]
-            store.update(radial_dist_coef_first=k1, radial_dist_coef_second=k2,
-                         radial_dist_coef_third=k3, radial_dist_coef_fourth=k4)
-
-        store['time_start'] = datetime.utcfromtimestamp(store['time_start'])
-        store['time_end'] = datetime.utcfromtimestamp(store['time_end']) if store['time_end'] else None
-
-        return store
-
-    @staticmethod
-    def clean_geometry(geometry):
-        key_mapping = FIELD_MAPPING['geometry']
-        store = {new_key: geometry[old_key] for new_key, old_key in key_mapping.items()}
-        store['time_valid'] = datetime.utcfromtimestamp(store['time_valid'])
-        return store
-
-    @staticmethod
-    def clean_gcp(gcp):
-        key_mapping = FIELD_MAPPING['gcp']
-        store = {new_key: gcp[old_key] for new_key, old_key in key_mapping.items()}
-
-        store['time_start'] = datetime.utcfromtimestamp(store['time_start'])
-        store['time_end'] = datetime.utcfromtimestamp(store['time_end']) if store['time_end'] else None
-        return store
-
-    @staticmethod
-    def clean_usedgcp(used_gcp):
-        key_mapping = FIELD_MAPPING['usedGCP']
-        store = {new_key: used_gcp[old_key] for new_key, old_key in key_mapping.items()}
-        return store
-
-    @staticmethod
-    def clean_ip(site):
-        key_mapping = FIELD_MAPPING['IP']
-        store = {new_key: site[old_key] for new_key, old_key in key_mapping.items()}
-        return store
-
-    @classmethod
-    def get_clean_functions(cls):
-        functions = {}
-        for name, method in cls.__dict__.items():
-            if name.startswith('clean'):
-                functions.update({
-                    re.sub(r"^clean", "", name.replace('_', '')).lower(): method
-                })
-        return functions
-
-    @classmethod
-    def clean_table(cls, table_name, table):
-        functions = cls.get_clean_functions()
-        if table_name.lower() not in functions.keys():
-            return table
-
-        cleaned_table = [functions[table_name.lower()].__func__(item) for item in table]
-
-        # work around to account for dupiclate primary keys
-        if table_name == 'usedgcp':
-            all_pks = list(map(lambda item: item['pk'], cleaned_table))
-            max_pk = max(all_pks)
-            duplicate_pks = set([pk for pk in all_pks if all_pks.count(pk) > 1])
-
-            for duplicate_pk in duplicate_pks:
-                duplicate_entries = [
-                    (index, item) for index, item in enumerate(cleaned_table) if item['pk'] == duplicate_pk
-                ]
-                for index, item in duplicate_entries[1:]:
-                    max_pk += 1
-                    cleaned_table[index]['pk'] = max_pk
-        return cleaned_table
+    for table_name in AVAILABLE_TABLES:
+        extract_table(table_name)
 
 
-process_tables = ProcessTables()
+def list_local_tables():
+    """ list all local tables """
+
+    return [re_sub(r".json$", "", file).lower() for file in os.listdir(TABLE_DIR)]
+
+
+def load_table(table_name):
+    """ load a table stored locally """
+
+    table_path = os.path.join(TABLE_DIR, f"{table_name}.json")
+    with open(table_path, 'r') as file:
+        table = json.load(file)
+    return table
+
+
+def get_cleaned_table(table_name):
+    """ load a table stored locally and process so it can be stored within
+    model """
+
+    if table_name not in LOCAL_TABLES:
+        print('Can not clean this table')
+        return None
+
+    try:
+        table = load_table(table_name)
+    except FileNotFoundError:
+        print('You need to extract this table first')
+        return None
+
+    columns = get_table_model(Base, table_name).__table__.columns.keys()
+
+    key_mapping = utils.FIELD_MAPPING[table_name]
+    hybrid_fields = getattr(utils, f'add_fields_{table_name}', lambda item: item)
+    for entry in table:
+        # add new fields and update key names
+        entry = hybrid_fields(entry)
+        entry.update(
+            {new_key: entry[old_key] for new_key, old_key in key_mapping.items()}
+        )
+
+        # remove unwanted keys
+        for key in set(entry.keys()) - set(columns):
+            entry.pop(key)
+
+        # convert timestamp fields to datetimes
+        for key in filter(lambda column: column.startswith('time_'), columns):
+            timestamp = entry[key]
+            entry[key] = (datetime.utcfromtimestamp(timestamp)
+                          if timestamp > 0 else None)
+
+    post_process_table = getattr(
+        utils, f'post_process_{table_name}', lambda item: item
+    )
+    return post_process_table(table)
 
 
 def get_table_model(cls, table_name):
 
-    if table_name in TABLE_MAPPING.keys():
-        table_name = TABLE_MAPPING[table_name]
+    if table_name in utils.TABLE_MAPPING.keys():
+        table_name = utils.TABLE_MAPPING[table_name]
 
     for model_class in cls._decl_class_registry.values():
         if (hasattr(model_class, '__table__')
                and model_class.__table__.fullname == table_name):
             return model_class
     return None
-
-
-def load_table(table_name, process=True):
-
-    expected_path = os.path.join(TABLE_DIR, f"{table_name}.json")
-    if os.path.exists(expected_path):
-        with open(expected_path, 'r') as file:
-            table = json.load(file)
-        return process_tables.clean_table(table_name, table)
-    return None
-
-
-def get_local_tables():
-    return [re.sub(r".json$", "", file).lower() for file in os.listdir(TABLE_DIR)]
 
 
 def obj_to_dict(obj):
@@ -175,22 +157,31 @@ def create_session():
     return Session()
 
 
-def create_db():
+def create_db(remove_existing=False):
+
+    # check that the tables needed for db are avilable locally
+    if not process_table.all_tables_stored_locally:
+        raise ValueError('Extract all tables first')
 
     # remove existing database if it exists
-    if os.path.exists(settings.DATABASE_PATH):
-        os.remove(settings.DATABASE_PATH)
+    database_exists = os.path.exists(DATABASE_PATH)
+    if database_exists and not remove_existing:
+        print('Database already exists')
+        return
+    elif os.path.exists(DATABASE_PATH) and remove_existing:
+        os.remove(DATABASE_PATH)
+
 
     all_entries = []
-    for table_name in LOCAL_TABLES:
-
-        table = load_table(table_name)
+    for table_name in FIELD_MAPPING.keys():
+        table = process_table.get_table(table_name)
 
         new_table_name = TABLE_MAPPING.get(table_name, None)
         table_name = new_table_name if new_table_name else table_name
-        model = get_table_model(Base, table_name)
 
+        model = get_table_model(Base, table_name)
         all_entries += [model(**item) for item in table]
+
 
     engine = create_engine(DATABASE_URL, echo=False)
     Base.metadata.create_all(engine)
