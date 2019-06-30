@@ -79,33 +79,41 @@ def extract_all_tables():
 def list_local_tables():
     """ list all local tables """
 
-    return [
-        re_sub(r".json$", "", file).lower() for file in os.listdir(TABLE_DIR)
-    ]
+    return {
+        re_sub(r".json$", "", file): file for file in os.listdir(TABLE_DIR)
+    }
 
 
 def load_table(table_name):
     """ load a table stored locally """
 
-    table_path = os.path.join(TABLE_DIR, f"{table_name}.json")
-    with open(table_path, 'r') as file:
-        table = json.load(file)
-    return table
+    if not isinstance(table_name, str):
+        raise TypeError
+    table_name = table_name.lower()
+
+    local_tables = list_local_tables()
+    for local_name, file_name in local_tables.items():
+        if table_name in (local_name.lower(), file_name.lower()):
+            table_path = os.path.join(TABLE_DIR, file_name)
+            with open(table_path, 'r') as file:
+                table = json.load(file)
+            return table
+    print('Table does not exit')
+    return None
 
 
 def get_cleaned_table(table_name):
     """ load a table stored locally and process so it can be stored within
     model """
 
-    if table_name not in LOCAL_TABLES:
-        print('Can not clean this table')
+    table = load_table(table_name)
+    if not table:
         return None
 
-    try:
-        table = load_table(table_name)
-    except FileNotFoundError:
-        print('You need to extract this table first')
-        return None
+    table_name = re_sub(r".json$", "", table_name).lower()
+    if table_name not in LOCAL_TABLES:
+        print('Can not clean this table')
+        return table
 
     columns = get_table_model(Base, table_name).__table__.columns.keys()
 
@@ -161,7 +169,7 @@ def create_session():
 def create_db(remove_existing=False):
 
     # check that the tables needed for db are avilable locally
-    local_tables = list_local_tables()
+    local_tables = {table.lower() for table in list_local_tables().keys()}
     if not all(table in local_tables for table in LOCAL_TABLES):
         raise ValueError('Extract all tables first')
 
