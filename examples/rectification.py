@@ -1,5 +1,5 @@
 
-from datetime import datetime, timedelta
+from datetime import datetime
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -8,7 +8,7 @@ import pandas as pd
 from argus.core import obj_to_dict, create_session
 from argus.models import Camera, Geometry, UsedGcp, Gcp
 from argus.camera import Camera as ArgusCamera
-from argus.images import IMAGE_BASE_URL, get_images, load_image
+from argus.images import get_test_image
 
 
 session = create_session()
@@ -57,21 +57,10 @@ ZMXX01C.rectify(object_points, undistorted_image_points)
 calculated_image_points = ZMXX01C.object_to_image_points(object_points)
 
 
-# in order to present everything get an image from the desired camera, and plot
+# in order to resent everything get an image from the desired camera, and plot
 # the calculated and known image points
+image = get_test_image(camera_id)
 
-# get a dataframe with image urls for selected camera
-df_images = get_images(
-    time_start=time_start, time_end=time_start + timedelta(days=1),
-    cameras=camera.number, image_types='snap'
-)
-
-# contruct full url and load image
-image_url = IMAGE_BASE_URL + df_images.snap[5]
-print(image_url)
-image = load_image(image_url)
-
-# plot the results
 plt.figure()
 plt.imshow(ZMXX01C.undistort_image(image))
 plt.plot(*undistorted_image_points.T, 'or')

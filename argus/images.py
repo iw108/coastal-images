@@ -9,6 +9,7 @@ Created on Thu Jun  7 10:47:14 2018
 from calendar import timegm
 from datetime import datetime
 import itertools
+import os
 import urllib
 import requests
 
@@ -16,6 +17,8 @@ import cv2
 import numpy as np
 import pandas as pd
 import pytz
+
+from .core import DATA_DIR
 
 
 IMAGE_CATALOG_URL = "http://argus-public.deltares.nl/catalog"
@@ -169,6 +172,26 @@ def load_image(url, to_float=True):
     image = cv2.cvtColor(
         cv2.imdecode(image_bytes, cv2.IMREAD_COLOR), cv2.COLOR_BGR2RGB
     )
+    if to_float:
+        return np.float32(image.astype(float)/255)
+    return image
+
+
+def get_test_image(camera_id, to_float=True):
+
+    if not isinstance(camera_id, str):
+        raise TypeError
+
+    image_dir = os.path.join(DATA_DIR, 'images')
+    image_name = camera_id.lower() + '.jpg'
+    if image_name not in os.listdir(image_dir):
+        return None
+
+    image = cv2.cvtColor(
+        cv2.imread(os.path.join(image_dir, image_name)),
+        cv2.COLOR_BGR2RGB
+    )
+
     if to_float:
         return np.float32(image.astype(float)/255)
     return image

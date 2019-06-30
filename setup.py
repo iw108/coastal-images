@@ -8,11 +8,11 @@ setup(
    author='Isaac Williams',
    author_email='isaac.williams.devel@gmail.com',
    include_package_data=True,
-   packages=['argus', 'zandmotor'],  #same as name
+   packages=['argus', 'zandmotor'],
    install_requires=[
        'pandas',
        'numpy',
-       'netCDF4<1.4',
+       'netCDF4',
        'SQLAlchemy',
        'opencv-contrib-python',
        'pytz',
@@ -20,5 +20,5 @@ setup(
        'pyproj',
        'requests',
        'scipy',
-       ], #external packages as dependencies
+       ],  # external packages as dependencies
 )

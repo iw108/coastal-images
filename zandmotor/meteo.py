@@ -1,5 +1,6 @@
 
 from calendar import timegm
+import os
 
 import numpy as np
 from pandas import DataFrame
@@ -7,9 +8,13 @@ from pandas import DataFrame
 from .utils import parse_datetime, timestamp_to_datetime, open_with_retries
 
 
-METEO_FILE = ("https://zandmotordata.nl/thredds/dodsC/"
-              "zandmotor/meteohydro/meteo/meteo.nc")
+# set up paths
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+METEO_FILE = os.path.join(BASE_DIR, 'data', 'meteo.nc')
+
+URL_METEO_FILE = ("https://zandmotordata.nl/thredds/dodsC/"
+                  "zandmotor/meteohydro/meteo/meteo.nc")
 
 METEO_VARIABLES = [
     'AirTemp_Avg',
