@@ -24,7 +24,7 @@ FIELD_MAPPING = {
         'time_end': 'timeOUT'
     },
 
-    'camera' : {
+    'camera': {
         'pk': 'seq',
         'id': 'id',
         'station_id': 'stationID',
@@ -80,10 +80,12 @@ TABLE_MAPPING = {
 
 
 def add_fields_site(entry):
-    entry['epsg'] = (4826 if not entry['coordinateEPSG']
-                     else entry['coordinateEPSG'])
+    entry['epsg'] = (
+        4826 if not entry['coordinateEPSG'] else entry['coordinateEPSG']
+    )
     if entry['coordinateOrigin']:
-       entry['lat'], entry['lon'], entry['elev'] = entry['coordinateOrigin'][0]
+        lat, lon, elev =\
+             entry['coordinateOrigin'][0]
     return entry
 
 
@@ -116,7 +118,8 @@ def post_process_usedgcp(table):
 
     for duplicate_pk in duplicate_pks:
         duplicate_entries = [
-            (index, item) for index, item in enumerate(table) if item['pk'] == duplicate_pk
+            (index, item) for index, item in enumerate(table)
+            if item['pk'] == duplicate_pk
         ]
         for index, item in duplicate_entries[1:]:
             max_pk += 1

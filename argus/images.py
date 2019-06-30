@@ -18,7 +18,6 @@ import pandas as pd
 import pytz
 
 
-
 IMAGE_CATALOG_URL = "http://argus-public.deltares.nl/catalog"
 
 IMAGE_BASE_URL = "http://argus-public.deltares.nl/sites"
@@ -40,7 +39,7 @@ def parse_image_types(image_types):
     if isinstance(image_types, str):
         image_types = [image_types]
     if not (isinstance(image_types, list) and
-            all([image_type in IMAGE_BASIC_TYPES for image_type in image_types])):
+            all(im_type in IMAGE_BASIC_TYPES for im_type in image_types)):
         raise ValueError('image_types must be string or list of strings')
     return image_types
 
@@ -92,14 +91,12 @@ def get_images(time_start, time_end, parse=True, **kwargs):
     time_end = timestamp_from_datetime(time_end)
 
     # split timestamps into intervals
-    time_steps = np.linspace(
-        time_start, time_end, max(2, int((time_end - time_start)/ (30 * 24 * 3600)))
-    ).astype(int)
-
+    delta = max(2, int((time_end - time_start) / (30 * 24 * 3600)))
+    time_steps = np.linspace(time_start, time_end, delta).astype(int)
 
     parameters = {
         'site': 'zandmotor',
-        'output':'json'
+        'output': 'json'
     }
     data = []
     for start_interval, end_interval in zip(time_steps[:-1], time_steps[1:]):
@@ -110,7 +107,9 @@ def get_images(time_start, time_end, parse=True, **kwargs):
         if options:
             for item in option_list:
                 parameters.update(item)
-                data += requests.get(IMAGE_CATALOG_URL, parameters).json()['data']
+                data += requests.get(
+                    IMAGE_CATALOG_URL, parameters
+                ).json()['data']
         else:
             data += requests.get(IMAGE_CATALOG_URL, parameters).json()['data']
 
@@ -134,7 +133,6 @@ def _image_request_to_pandas(data):
     image_types = df.type.unique()
     to_multi_index = True if len(cameras) > 1 else False
 
-
     indices = pd.date_range(
         start=df.index.min().floor('1H'), end=df.index.max().ceil('1H'),
         freq='30T', tz=pytz.utc
@@ -148,7 +146,6 @@ def _image_request_to_pandas(data):
             [(camera, image) for camera in cameras for image in image_types]
         )
     df_images = pd.DataFrame(index=indices, columns=columns)
-
 
     for index, row in df.iterrows():
         time_delta = abs((df_images.index - pytz.utc.localize(index)))\
@@ -193,4 +190,5 @@ class PerspectiveTransform(object):
 
     @classmethod
     def perspective_transform(cls, initial_points, warped_points, image):
-        return cls(initial_points, warped_points).apply_perspective_transform(image)
+        return cls(initial_points, warped_points)\
+                    .apply_perspective_transform(image)

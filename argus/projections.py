@@ -1,7 +1,6 @@
 
 import ephem
 import numpy as np
-import pyproj
 from pytz import timezone as pytz_timezone, utc as pytz_utc, all_timezones
 
 
@@ -16,9 +15,9 @@ class Rotation(object):
     def origin(self):
         return [self.lat, self.lon]
 
-    #Argus to local
+    # Argus to local
     def local_to_argus(self, coords):
-        coords = self._rotate(coords - self.origin) 
+        coords = self._rotate(coords - self.origin)
         return coords
 
     def argus_to_local(self, coords):
@@ -45,7 +44,7 @@ def parse_timezone(timezone_string):
     if not isinstance(timezone_string, str):
         raise TypeError('Timezone must be a string')
 
-    if not timezone_string in all_timezones:
+    if timezone_string not in all_timezones:
         raise ValueError(f'{timezone_string} not a valid timezone')
 
     return pytz_timezone(timezone_string)
@@ -53,20 +52,21 @@ def parse_timezone(timezone_string):
 
 class Solar(ephem.Observer):
 
-    def __init__(self, lon, lat, elev=0, timezone='Europe/Amsterdam', in_degrees=True):
+    def __init__(self, lon, lat, elev=0,
+                 timezone='Europe/Amsterdam', in_degrees=True):
 
         self.in_degrees = in_degrees
-        self.lon, self.lat = np.deg2rad([lon, lat]) if in_degrees else (lon, lat)
+        self.lon, self.lat = (
+            np.deg2rad([lon, lat]) if in_degrees else (lon, lat)
+        )
         self.elev = elev
-        self.timezone =  parse_timezone(timezone)
-
+        self.timezone = parse_timezone(timezone)
 
     @property
     def coords(self):
         if self.in_degrees:
             return np.rad2deg([self.lon, self.lat])
         return self.lon, self.lat
-
 
     def sun_position(self, input_datetime):
 
@@ -77,7 +77,6 @@ class Solar(ephem.Observer):
         if self.in_degrees:
             return np.rad2deg([position.az, position.alt])
         return position.az, position.alt
-
 
     def daylight_hours(self, input_datetime):
 
@@ -96,11 +95,9 @@ class Solar(ephem.Observer):
 
         return sunrise_datetime, sunset_datetime
 
-
     def process_output_datetime(self, datetime_obj):
         output_datetime = pytz_utc.localize(datetime_obj)
         return output_datetime.astimezone(self.timezone)
-
 
     def process_input_datetime(self, date):
         if not date.tzinfo:
@@ -118,18 +115,19 @@ def rotate(angle, points):
     return np.dot(rotation_matrix, points.T).T
 
 
-def shadow_position(azimuth, altitude, object_height, offset=(0, 0), in_degrees=False):
+def shadow_position(azimuth, altitude,
+                    object_height, offset=(0, 0), in_degrees=False):
 
     if in_degrees:
         azimuth, altitude = np.deg2rad([azimuth, altitude])
 
-    shadow_length = object_height/ np.tan(altitude)
+    shadow_length = object_height / np.tan(altitude)
     if altitude < 0:
         shadow_length = 0
 
     angle = (azimuth + np.pi) % (2 * np.pi)
     shadow_vector = np.array([[0, 0], [shadow_length, 0]])
     shadow_vector = (rotate(angle, shadow_vector).T
-                     + np.asarray(offset).reshape(-1,1))
+                     + np.asarray(offset).reshape(-1, 1))
 
     return shadow_vector

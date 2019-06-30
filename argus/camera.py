@@ -45,7 +45,6 @@ class Camera(object):
             return True
         return False
 
-
     def undistort_points(self, points):
         undistorted_points = cv2.undistortPoints(
             points.reshape(-1, 1, 2), self.opt_camera_matrix, self.dist_coefs,
@@ -71,7 +70,6 @@ class Camera(object):
 
         self.rotation_matrix = cv2.Rodrigues(rotation_vector)[0]
 
-
     def object_to_image_points(self, points):
 
         if not self.is_rectified:
@@ -87,7 +85,8 @@ class Camera(object):
 
         # calculate image coordinates
         scaled_object_points = (
-            object_points_camera[:, :-1] / object_points_camera[:, -1].reshape(-1, 1)
+            object_points_camera[:, :-1] /
+            object_points_camera[:, -1].reshape(-1, 1)
         )
 
         image_points = (
@@ -97,18 +96,16 @@ class Camera(object):
         image_points = self._mask_image_points(image_points)
         return image_points
 
-
     def _mask_image_points(self, image_points):
 
         mask = (np.isnan(image_points) | (image_points < 0)
-                    | (image_points >= np.array(self.frame_size)))
+                | (image_points >= np.array(self.frame_size)))
 
         return np.ma.masked_array(image_points, mask=mask)
-
 
     def projection_error(self, object_points, image_points):
 
         pixel_diff = (self.object_to_image_points(self, object_points).data
-                          - image_points)
+                      - image_points)
 
         return ((pixel_diff**2).sum(axis=1)**0.5).mean()

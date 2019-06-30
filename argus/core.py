@@ -52,11 +52,10 @@ TABLE_DIR = os.path.join(DATA_DIR, 'tables')
 LOCAL_TABLES = tuple(utils.FIELD_MAPPING.keys())
 
 
-
 def get_table(table_name):
     """ get table from api """
 
-    if not table_name in AVAILABLE_TABLES:
+    if table_name not in AVAILABLE_TABLES:
         raise ValueError("Table does not exist")
     return requests.get(('/').join((API, table_name))).json()
 
@@ -80,7 +79,9 @@ def extract_all_tables():
 def list_local_tables():
     """ list all local tables """
 
-    return [re_sub(r".json$", "", file).lower() for file in os.listdir(TABLE_DIR)]
+    return [
+        re_sub(r".json$", "", file).lower() for file in os.listdir(TABLE_DIR)
+    ]
 
 
 def load_table(table_name):
@@ -109,13 +110,13 @@ def get_cleaned_table(table_name):
     columns = get_table_model(Base, table_name).__table__.columns.keys()
 
     key_mapping = utils.FIELD_MAPPING[table_name]
-    hybrid_fields = getattr(utils, f'add_fields_{table_name}', lambda item: item)
+    hybrid_fields = getattr(
+        utils, f'add_fields_{table_name}', lambda item: item
+    )
     for entry in table:
         # add new fields and update key names
         entry = hybrid_fields(entry)
-        entry.update(
-            {new_key: entry[old_key] for new_key, old_key in key_mapping.items()}
-        )
+        entry.update({new: entry[old] for new, old in key_mapping.items()})
 
         # remove unwanted keys
         for key in set(entry.keys()) - set(columns):
@@ -140,7 +141,7 @@ def get_table_model(cls, table_name):
 
     for model_class in cls._decl_class_registry.values():
         if (hasattr(model_class, '__table__')
-               and model_class.__table__.fullname == table_name):
+                and model_class.__table__.fullname == table_name):
             return model_class
     return None
 
@@ -160,7 +161,8 @@ def create_session():
 def create_db(remove_existing=False):
 
     # check that the tables needed for db are avilable locally
-    if not process_table.all_tables_stored_locally:
+    local_tables = list_local_tables()
+    if not all(table in local_tables for table in LOCAL_TABLES):
         raise ValueError('Extract all tables first')
 
     # remove existing database if it exists
@@ -171,17 +173,15 @@ def create_db(remove_existing=False):
     elif os.path.exists(DATABASE_PATH) and remove_existing:
         os.remove(DATABASE_PATH)
 
-
     all_entries = []
-    for table_name in FIELD_MAPPING.keys():
-        table = process_table.get_table(table_name)
+    for table_name in utils.FIELD_MAPPING.keys():
+        table = get_cleaned_table(table_name)
 
-        new_table_name = TABLE_MAPPING.get(table_name, None)
+        new_table_name = utils.TABLE_MAPPING.get(table_name, None)
         table_name = new_table_name if new_table_name else table_name
 
         model = get_table_model(Base, table_name)
         all_entries += [model(**item) for item in table]
-
 
     engine = create_engine(DATABASE_URL, echo=False)
     Base.metadata.create_all(engine)
@@ -192,7 +192,8 @@ def create_db(remove_existing=False):
     try:
         session.add_all(all_entries)
         session.commit()
-    except:
+    except Exception as e:
+        print(e)
         session.rollback()
     finally:
         session.close()

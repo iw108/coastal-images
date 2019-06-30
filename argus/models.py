@@ -1,11 +1,11 @@
 
 import numpy as np
 
-from sqlalchemy import select, func, create_engine, Column, Float, Integer, String, DateTime, ForeignKey
+from sqlalchemy import (select, func, Column, Float, Integer, String,
+                        DateTime, ForeignKey)
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.orm import relationship, column_property
-
 
 
 Base = declarative_base()
@@ -70,16 +70,18 @@ class Camera(Base):
     radial_dist_coef_second = Column(Float)
     radial_dist_coef_third = Column(Float)
     radial_dist_coef_fourth = Column(Float)
-    coord_x  = Column(Float)
-    coord_y  = Column(Float)
-    coord_z  = Column(Float)
+    coord_x = Column(Float)
+    coord_y = Column(Float)
+    coord_z = Column(Float)
     time_start = Column(DateTime)
     time_end = Column(DateTime)
 
     # relationships
     station_id = Column(String(10), ForeignKey('station.id'))
     station = relationship("Station")
-    intrinsic_parameters_id = Column(String(10), ForeignKey('intrinsic_parameters.id'))
+    intrinsic_parameters_id = Column(
+        String(10), ForeignKey('intrinsic_parameters.id')
+    )
     intrinsic_parameters = relationship("IntrinsicParameters")
     geometry = relationship("Geometry", lazy='dynamic')
 
@@ -100,8 +102,12 @@ class Camera(Base):
     @hybrid_property
     def camera_matrix(self):
         return np.array([
-            [self.focal_point_horizontal, self.skewness, self.principal_point_horizontal],
-            [0, self.focal_point_vertical, self.principal_point_vertical],
+            [self.focal_point_horizontal,
+             self.skewness,
+             self.principal_point_horizontal],
+            [0,
+             self.focal_point_vertical,
+             self.principal_point_vertical],
             [0, 0, 1]
         ])
 
@@ -131,13 +137,13 @@ class Gcp(Base):
     pk = Column(Integer, primary_key=True)
     id = Column(String(10))
     name = Column(String(128))
-    coord_x  = Column(Float)
-    coord_y  = Column(Float)
-    coord_z  = Column(Float)
+    coord_x = Column(Float)
+    coord_y = Column(Float)
+    coord_z = Column(Float)
     time_start = Column(DateTime)
     time_end = Column(DateTime)
 
-    #relationships
+    # relationships
     site_id = Column(String(10), ForeignKey('site.id'))
 
     @hybrid_property
@@ -156,7 +162,7 @@ class UsedGcp(Base):
     image_coord_horizontal = Column(Float)
     image_coord_vertical = Column(Float)
 
-    #relationships
+    # relationships
     geometry_id = Column(Integer, ForeignKey('geometry.id'))
     gcp_id = Column(String(10), ForeignKey('gcp.id'))
 
@@ -179,9 +185,9 @@ class Geometry(Base):
     camera_id = Column(String(10), ForeignKey('camera.id'))
 
     gcp_count = column_property(
-        select([func.count(UsedGcp.pk)]).\
-            where(UsedGcp.geometry_id==id)
-        )
+        select([func.count(UsedGcp.pk)]).where(UsedGcp.geometry_id == id)
+    )
 
     def __repr__(self):
-        return f"<Geometry {self.camera_id}: {self.time_valid.strftime('%Y-%m-%d %H:%M')}>"
+        return (f"<Geometry {self.camera_id}:"
+                f"{self.time_valid.strftime('%Y-%m-%d %H:%M')}>")

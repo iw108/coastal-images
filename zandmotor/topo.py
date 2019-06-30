@@ -32,23 +32,23 @@ class Lidar(object):
         with open_with_retries(self.file_path) as dataset:
             timestamps = dataset['time'][:] * (24 * 60 * 60)
 
-        timestamps = [timestamp_to_datetime(timestamp) for timestamp in timestamps]
+        timestamps = [
+             timestamp_to_datetime(timestamp) for timestamp in timestamps
+        ]
         return np.asarray(timestamps)
-
 
     def get_timestamp_index(self, datetime_obj):
         datetime_obj = parse_datetime(datetime_obj)
         return abs(self.timestamps - datetime_obj).argmin()
-
 
     def is_valid_timestamp_index(self, index):
 
         if not isinstance(index, int):
             raise TypeError('Index must be integer')
 
-        if isinstance(index, int) and ((index < 0) or index > len(self.timestamps)):
+        if (isinstance(index, int)
+                and ((index < 0) or index > len(self.timestamps))):
             raise ValueError('Enter a valid integer')
-
 
     def load_topo_from_datetime(self, datetime_obj):
 
@@ -57,7 +57,6 @@ class Lidar(object):
 
         topo_timestamp = self.timestamps[index]
         return lon, lat, elev, topo_timestamp
-
 
     def load_topo_from_index(self, index):
 
@@ -69,10 +68,9 @@ class Lidar(object):
             elev = dataset['z'][index]
         return lon, lat, elev
 
-
     @classmethod
     def get_topo(cls, datetime_obj):
-       return cls().load_topo_from_datetime(datetime_obj)
+        return cls().load_topo_from_datetime(datetime_obj)
 
 
 class GPS(Lidar):
@@ -82,18 +80,18 @@ class GPS(Lidar):
     def load_topo_from_index(self, index):
         with open_with_retries(self.file_path) as dataset:
             xyz = dataset['survey_path_RD'][index]
-            lon, lat, elev = xyz[xyz.mask[:, 0] == False, :].data.T
+            lon, lat, elev = xyz[~xyz.mask[:, 0], :].data.T
         return lon, lat, elev
 
-
     @staticmethod
-    def interpolate_data(lon, lat, elev, lon_lims=(7e4, 7.5e4), lat_lims=(4.5e5, 4.55e5),
-                         lon_spacing=2, lat_spacing=2):
+    def interpolate_data(
+        lon, lat, elev, lon_lims=(7e4, 7.5e4),
+            lat_lims=(4.5e5, 4.55e5), lon_spacing=2, lat_spacing=2):
 
         lon_array = np.arange(*lon_lims, lon_spacing)
         lat_array = np.arange(*lat_lims, lat_spacing)
 
-        xx, yy  = np.meshgrid(lon_array, lat_array)
+        xx, yy = np.meshgrid(lon_array, lat_array)
         interpolated_elev = griddata((lon, lat), elev, (xx, yy))
 
         return lon_array, lat_array, interpolated_elev

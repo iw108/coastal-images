@@ -22,7 +22,7 @@ def parse_datetime(datetime_obj):
 
 def open_with_retries(file_path, retries=3):
     try:
-      return Dataset(file_path, 'r')
+        return Dataset(file_path, 'r')
     except OSError as exception:
         if retries > 0:
             print(f"Retrying {file_path}")

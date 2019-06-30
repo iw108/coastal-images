@@ -4,8 +4,6 @@ from datetime import datetime, timedelta
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, join
 
 from argus.core import obj_to_dict, create_session
 from argus.models import Camera, Geometry, UsedGcp, Gcp
@@ -37,7 +35,7 @@ df = pd.DataFrame([obj_to_dict(geom) for geom in geometries])\
 id = int((df['time_valid'] - time_start).abs().idxmin())
 
 used_gcps = session.query(UsedGcp, Gcp).join(Gcp)\
-            .filter(UsedGcp.geometry_id==id).all()
+            .filter(UsedGcp.geometry_id == id).all()
 session.close()
 
 
@@ -70,6 +68,7 @@ df_images = get_images(
 
 # contruct full url and load image
 image_url = IMAGE_BASE_URL + df_images.snap[5]
+print(image_url)
 image = load_image(image_url)
 
 # plot the results

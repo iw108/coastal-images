@@ -66,9 +66,7 @@ def get_meteo(time_start, time_end, variables):
         mask = ((timestamps <= timegm(end.timetuple())) &
                 (timestamps >= timegm(start.timetuple())))
 
-        data = {
-            variable: dataset.variables[variable][mask] for variable in variables
-        }
+        data = {var: dataset.variables[var][mask] for var in variables}
 
     dataframe = DataFrame(data).set_index(timestamps[mask])
     dataframe.index = dataframe.index.map(lambda ts: timestamp_to_datetime(ts))
